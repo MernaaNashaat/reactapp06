@@ -742,7 +742,7 @@ pubsub.subscribe({ topics: "esp32/pub" }).subscribe({
   style={{
     position: "absolute",
     top: "725px",
-    left: "318px",
+    left: "317px",
   }}
 />
     </Router>  
