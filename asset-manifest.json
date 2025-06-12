@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MernaaNashaat/reactapp06.git/static/css/main.771505e9.css",
+    "main.js": "/MernaaNashaat/reactapp06.git/static/js/main.eb28d121.js",
+    "index.html": "/MernaaNashaat/reactapp06.git/index.html",
+    "main.771505e9.css.map": "/MernaaNashaat/reactapp06.git/static/css/main.771505e9.css.map",
+    "main.eb28d121.js.map": "/MernaaNashaat/reactapp06.git/static/js/main.eb28d121.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.771505e9.css",
+    "static/js/main.eb28d121.js"
+  ]
+}
