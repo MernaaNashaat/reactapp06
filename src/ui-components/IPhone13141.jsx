@@ -3494,6 +3494,21 @@ export default function IPhone13141(props) {
        zIndex: 0,
     }}
   />
+  
+   <img
+   
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview.png"
+     alt="Background image"
+    style={{
+      width: '100px',
+      height: '60px',
+      position: 'absolute',
+      top: '590px',
+      left: '20px',
+       zIndex: 0,
+    }}
+       
+  />
 
 </div>
     </View>

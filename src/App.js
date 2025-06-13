@@ -377,7 +377,7 @@ position:"absolute" ,
   />
 )}
 
-                    <p>Here is your new content:</p>
+                    <p>..</p>
                     <IPhone13141 />
                     <Flex overflow="auto" />
                     <img
@@ -531,6 +531,20 @@ position:"absolute" ,
     : "Loading..."}
                     </div>
                   
+                  <div
+                      style={{
+                        position: "absolute",
+                        top: "975px",
+                        left: "50px",
+                        fontSize: "10px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {weight !== null
+    ? `${Number(weight).toFixed(2)} kg`
+    : "Loading.."}
+                    </div>
+
 
 
                     <div
@@ -752,7 +766,9 @@ position:"absolute" ,
     top: "725px",
     left: "317px",
   }}
+  
 />
+
     </Router>  
   );
 }
