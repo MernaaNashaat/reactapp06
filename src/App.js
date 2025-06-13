@@ -344,28 +344,36 @@ pubsub.subscribe({ topics: "esp32/pub" }).subscribe({
                     </button>
                     {user.username.toLowerCase() === "merna" && (
   <Image
-    width="120px"
-    height="120px"
-    display="block"
-    position="absolute"
-    top="100px"
-    left="250px"
-    objectFit="cover"
-    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.34_AM-removebg-preview.png"
-  />
+  src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.34_AM-removebg-preview.png"
+  alt="Merna Icon"
+  width="32px"
+  height="32px"
+  style={{
+    position: "absolute",
+    top: "1047px",      // 👈 place it visibly
+    left: "20px",
+    zIndex: 999,
+    objectFit: "cover",
+  }}
+/>
+
 )}
 
 
 {user.username.toLowerCase() === "abdulrhman" && (
   <Image
-    width="120px"
-    height="120px"
-    display="block"
-    position="absolute"
-    top="100px"
-    left="100px"
-    objectFit="cover"
-    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview.png"
+   src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview.png"
+   alt="Abdulrhman Icon"
+    width="33px"
+    height="33px" 
+    style={{
+position:"absolute" ,
+    top:"1047px",
+    left:"330px",
+    zIndex:1000,
+    objectFit:"cover",
+    }}
+    
   />
 )}
 

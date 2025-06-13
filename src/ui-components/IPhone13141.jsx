@@ -832,6 +832,8 @@ export default function IPhone13141(props) {
         border="1px SOLID rgba(220,220,220,1)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(31,31,46,1)"
+        zIndex="10"
+        
         {...getOverrideProps(overrides, "Rectangle 1")}
       ></View>
       <View
@@ -872,7 +874,9 @@ export default function IPhone13141(props) {
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
-          position="relative"
+          position="absolute"
+          top ="5px"
+          left="70px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.11.29_AM-removebg-preview.png"
@@ -901,6 +905,7 @@ export default function IPhone13141(props) {
           )}
         ></Image>
         <Image
+        /*
           width="32px"
           height="32px"
           display="block"
@@ -917,17 +922,19 @@ export default function IPhone13141(props) {
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.12.34_AM-removebg-preview 2"
           )}
+            */
         ></Image>
+        
         <Image
-          width="32px"
-          height="32px"
+          width="35px"
+          height="35px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
-          position="relative"
-          left="-45px"
+          position="absolute"
+          left="220px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.43_AM-removebg-preview.png"
@@ -937,6 +944,7 @@ export default function IPhone13141(props) {
           )}
         ></Image>
         <Image
+        /*
           width="33px"
           height="31px"
           display="block"
@@ -953,6 +961,7 @@ export default function IPhone13141(props) {
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview 2"
           )}
+            */
         ></Image>
       </Flex>
       <Image
@@ -1197,12 +1206,13 @@ export default function IPhone13141(props) {
           justifyContent="center"
           alignItems="center"
           position="absolute"
-          top="36.35px"
+          top="63px"
           left="-0.3px"
           border="0.3px SOLID rgba(197,197,197,1)"
           borderRadius="99.30000001192093px"
           padding="2px 3px 2px 3px"
           backgroundColor="rgba(15,9,38,1)"
+          zIndex="200000"
           {...getOverrideProps(overrides, "Frame 3")}
         >
           <Flex
@@ -3413,14 +3423,14 @@ export default function IPhone13141(props) {
       ></Icon>
     <div style={{ position: 'relative', width: '300px', height: '300px' }}>
   <img
-    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-05-25_012247-removebg-preview.png"
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_202605-removebg-preview.png"
      alt="Background image"
     style={{
-      width: '100px',
+      width: '92px',
       height: 'auto',
       position: 'absolute',
-      top: '115px',
-      left: '140px',
+      top: '147px',
+      left: '142px',
        zIndex: 0,
     }}
   />
@@ -3436,7 +3446,54 @@ export default function IPhone13141(props) {
       left: '166px', // 20 - 70
     }}
   />
-
+<img
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_13-6-2025_17540_-removebg-preview.png"
+     alt="Background image"
+    style={{
+      width: '65px',
+      height: 'auto',
+      position: 'absolute',
+      top: '240px',
+      left: '262px',
+       zIndex: 0,
+    }}
+  />
+<img
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview+(1).png"
+     alt="Background image"
+    style={{
+      width: '118px',
+      height: 'auto',
+      position: 'absolute',
+      top: '85px',
+      left: '233px',
+       zIndex: 0,
+    }}
+  />
+  <img
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_172811-removebg-preview.png"
+     alt="Background image"
+    style={{
+      width: '133px',
+      height: 'auto',
+      position: 'absolute',
+      top: '-28px',
+      left: '60px',
+       zIndex: 0,
+    }}
+  />
+  <img
+    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.09.28_AM-removebg-preview.png"
+     alt="Background image"
+    style={{
+      width: '60px',
+      height: '60px',
+      position: 'absolute',
+      top: '-90px',
+      left: '320px',
+       zIndex: 0,
+    }}
+  />
 
 </div>
     </View>

@@ -2,7 +2,7 @@
   "name": "reactapp06",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/MernaaNashaat/reactapp06.git" ,
+  
   "dependencies": {
     "@aws-amplify/auth": "^6.10.0",
     "@aws-amplify/pubsub": "^6.1.41",
