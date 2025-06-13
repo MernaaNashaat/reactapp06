@@ -3426,7 +3426,7 @@ export default function IPhone13141(props) {
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_202605-removebg-preview.png"
      alt="Background image"
     style={{
-      width: '92px',
+      width: '93px',
       height: 'auto',
       position: 'absolute',
       top: '147px',
