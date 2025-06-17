@@ -16,6 +16,7 @@ import { Hub } from "aws-amplify/utils";
 import { Icon } from "@aws-amplify/ui-react"; // Import if using Amplify UI
 
 import ConcreteMixForm from './components/ConcreteMixForm';
+import ReportsPage from './components/Reports/ReportsPage';
 import { Link } from 'react-router-dom';
 
 import { withAuthenticator } from '@aws-amplify/ui-react';
@@ -65,7 +66,7 @@ function App() {
   const [weight, setWeight] = useState(null); // State to hold the weight value
   const [Weight_cement, setWeight2] = useState(null); // State to hold the weight cement value
   const [Weight_water, setWeight3] = useState(null); // State to hold the weight water value
-
+  const [State, setState] = useState(null); // State to hold the weight water value
 
 
 
@@ -129,8 +130,8 @@ function App() {
           );
         }
         // Update the weight state if it exists in the received data
-        if (data.Weight_aggregates_2 !== undefined) {
-          setWeight(data.Weight_aggregates_2);
+        if (data.weight !== undefined) {
+          setWeight(data.weight);
         }
 
 
@@ -140,6 +141,10 @@ function App() {
 
         if (data.Weight_water !== undefined) {
           setWeight3(data.Weight_water);
+        }
+
+        if (data.State !== undefined) {
+          setState(data.State);
         }
 
 
@@ -344,8 +349,8 @@ function App() {
                       Sign Out
                     </button>
                     {user.username.toLowerCase() === "merna" && (
-                      
-                        <Link to="/concrete-mix">
+
+                      <Link to="/concrete-mix">
                         <Image
                           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.34_AM-removebg-preview.png"
                           alt="Merna Icon"
@@ -354,34 +359,35 @@ function App() {
                           style={{
                             position: "absolute",
                             top: "1047px",
-                            left: "20px",
+                            left: "330px",
                             zIndex: 999,
-                          
                             objectFit: "cover",
                             cursor: "pointer" // Add this for better UX
                           }}
                         />
-                        </Link>
-                     
+                      </Link>
+
                     )}
 
 
 
                     {user.username.toLowerCase() === "abdulrhman" && (
-                      <Image
-                        src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview.png"
-                        alt="Abdulrhman Icon"
-                        width="33px"
-                        height="33px"
-                        style={{
-                          position: "absolute",
-                          top: "1047px",
-                          left: "330px",
-                          zIndex: 1000,
-                          objectFit: "cover",
-                        }}
+                      <Link to="/reports">
+                        <Image
+                          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview.png"
+                          alt="Abdulrhman Icon"
+                          width="33px"
+                          height="33px"
+                          style={{
+                            position: "absolute",
+                            top: "1047px",
+                            left: "330px",
+                            zIndex: 1000,
+                            objectFit: "cover",
+                          }}
 
-                      />
+                        />
+                      </Link>
                     )}
 
                     <p>..</p>
@@ -464,22 +470,22 @@ function App() {
                     <div
                       style={{
                         position: "absolute",
-                        top: "650px",
-                        left: "116px",
-                        fontSize: "2.5px",
+                        top: "649px",
+                        left: "114px",
+                        fontSize: "4px",
                         fontWeight: "bold",
                       }}
                     >
-                      {weight !== null
+                      { weight!== null
                         ? `${Number(weight).toFixed(2)} kg`
                         : "Loading..."}
                     </div>
                     <div
                       style={{
                         position: "absolute",
-                        top: "505px",
-                        left: "192px",
-                        fontSize: "2.5px",
+                        top: "507px",
+                        left: "190px",
+                        fontSize: "4px",
                         fontWeight: "bold",
                       }}
                     >
@@ -487,12 +493,13 @@ function App() {
                         ? `${Number(Weight_cement).toFixed(2)} kg`
                         : "Loading..."}
                     </div>
+
                     <div
                       style={{
                         position: "absolute",
                         top: "730px",
                         left: "328px",
-                        fontSize: "2.5px",
+                        fontSize: "4px",
                         fontWeight: "bold",
                       }}
                     >
@@ -505,14 +512,13 @@ function App() {
                       style={{
                         position: "absolute",
                         top: "975px",
-                        left: "50px",
+                        left: "48px",
                         fontSize: "10px",
                         fontWeight: "bold",
                       }}
                     >
-                      {weight !== null
-                        ? `${Number(weight).toFixed(2)} kg`
-                        : "Loading.."}
+                      {State !== null ? `${State} ` : "SCADA"}
+
                     </div>
                     <div
                       style={{
@@ -743,6 +749,7 @@ function App() {
           }
         />
         <Route path="/concrete-mix" element={<ConcreteMixForm />} />
+        <Route path="/reports" element={<ReportsPage />} />
       </Routes>
       {showSecondaryImage && (
         <img
