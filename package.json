@@ -13,6 +13,8 @@
     "@aws-sdk/client-iot-data-plane": "^3.731.1",
     "@aws-sdk/credential-provider-cognito-identity": "^3.828.0",
     "@aws-sdk/lib-dynamodb": "^3.828.0",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "aws-amplify": "^6.15.0",
     "cra-template": "1.2.0",
     "file-saver": "^2.0.5",

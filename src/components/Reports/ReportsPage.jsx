@@ -6,8 +6,11 @@ import "./Reports.css";
 
 export default function ReportsPage() {
     const [tab, setTab] = useState("batching");
+    
 
     return (
+        
+        
         <div className="reports-container">
             <div className="tab-bar">
                 <button

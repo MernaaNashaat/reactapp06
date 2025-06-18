@@ -22,10 +22,13 @@ export default function IPhone13141(props) {
       justifyContent="unset"
       overflow="hidden"
       position="relative"
-      border="1px SOLID rgba(246,246,246,1)"
-      borderRadius="33px"
+      border="1px SOLID rgb(226, 211, 211)"
+      //borderRadius="33px"
       padding="0px 0px 0px 0px"
-      backgroundImage="linear-gradient(-45deg, rgba(25,17,56,1), rgba(73,70,104,1), rgba(131,132,170,1))"
+       //backgroundImage="linear-gradient( rgb(12, 11, 13), rgb(4, 2, 17), rgb(6, 6, 12))"
+
+      backgroundColor=" rgb(1, 5, 13)"
+      
       {...getOverrideProps(overrides, "IPhone13141")}
       {...rest}
     >
@@ -699,7 +702,7 @@ export default function IPhone13141(props) {
           ></Icon>
         </View>
       </View>
-      <Image
+      {/* <Image
         width="66px"
         height="55px"
         display="block"
@@ -717,7 +720,7 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.05.23_AM-removebg-preview 2"
         )}
-      ></Image>
+      ></Image> */}
       <View
         padding="0px 0px 0px 0px"
         width="421px"
@@ -735,13 +738,7 @@ export default function IPhone13141(props) {
           width="200px"
           height="200px"
           viewBox={{ minX: 0, minY: 0, width: 200, height: 200 }}
-          paths={[
-            {
-              d: "M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100Z",
-              fill: "rgba(52,28,96,1)",
-              fillRule: "nonzero",
-            },
-          ]}
+         
           display="block"
           gap="unset"
           alignItems="unset"
@@ -755,13 +752,7 @@ export default function IPhone13141(props) {
           width="200px"
           height="200px"
           viewBox={{ minX: 0, minY: 0, width: 200, height: 200 }}
-          paths={[
-            {
-              d: "M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100Z",
-              fill: "rgba(83,84,176,1)",
-              fillRule: "nonzero",
-            },
-          ]}
+          
           display="block"
           gap="unset"
           alignItems="unset"
@@ -775,13 +766,7 @@ export default function IPhone13141(props) {
           width="200px"
           height="200px"
           viewBox={{ minX: 0, minY: 0, width: 200, height: 200 }}
-          paths={[
-            {
-              d: "M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100Z",
-              fill: "rgba(178,72,217,1)",
-              fillRule: "nonzero",
-            },
-          ]}
+          
           display="block"
           gap="unset"
           alignItems="unset"
@@ -800,13 +785,7 @@ export default function IPhone13141(props) {
             width: 220.06548941135406,
             height: 220.06548941135406,
           }}
-          paths={[
-            {
-              d: "M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100Z",
-              fill: "rgba(96,18,169,1)",
-              fillRule: "nonzero",
-            },
-          ]}
+          
           display="block"
           gap="unset"
           alignItems="unset"
@@ -829,7 +808,7 @@ export default function IPhone13141(props) {
         position="absolute"
         top="765px"
         left="-1px"
-        border="1px SOLID rgba(220,220,220,1)"
+        border="1px SOLID rgb(70, 68, 68)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(31,31,46,1)"
         zIndex="10"
@@ -973,10 +952,10 @@ export default function IPhone13141(props) {
         justifyContent="unset"
         position="absolute"
         top="640px"
-        left="192px"
+        left="110px"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.27.06_PM-removebg-preview+(1).png"
+        src="/Cement_Mixer-removebg-preview.png"
         {...getOverrideProps(overrides, "Mixer truck")}
       ></Image>
       <Flex
@@ -1009,10 +988,10 @@ export default function IPhone13141(props) {
             "WhatsApp_Image_2024-08-22_at_9.25.21_PM__1_-removebg-preview 2"
           )}
         ></Image>
-        <Image
-          width="80px"
-          height="105px"
-          display="block"
+        {/* <Image
+          width="100px"
+          height="130px"
+          display="flex"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
@@ -1020,14 +999,15 @@ export default function IPhone13141(props) {
           position="absolute"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          //left="5px"
+          left="100px"
+          top="40px"
           
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.21.57_AM-removebg-preview.png"
           {...getOverrideProps(
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.21.57_AM-removebg-preview 1"
           )}
-        ></Image>
+        ></Image> */}
         <Flex
           gap="22px"
           direction="row"
@@ -1180,7 +1160,7 @@ export default function IPhone13141(props) {
 
           {...getOverrideProps(overrides, "Line 18183230")}
         ></Icon>
-        <Image
+        {/* <Image
           width="56.96px"
           height="87.91px"
           display="block"
@@ -1197,23 +1177,23 @@ export default function IPhone13141(props) {
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.18.32_AM-removebg-preview 2"
           )}
-        ></Image>
+        ></Image> */}
         <Flex
-          gap="10px"
-          direction="column"
-          width="26.93px"
-          height="8.94px"
-          justifyContent="center"
-          alignItems="center"
-          position="absolute"
-          top="63px"
-          left="-0.3px"
-          border="0.3px SOLID rgba(197,197,197,1)"
-          borderRadius="99.30000001192093px"
-          padding="2px 3px 2px 3px"
-          backgroundColor="rgba(15,9,38,1)"
-          zIndex="200000"
-          {...getOverrideProps(overrides, "Frame 3")}
+          // gap="10px"
+          // direction="column"
+          // width="26.93px"
+          // height="8.94px"
+          // justifyContent="center"
+          // alignItems="center"
+          // position="absolute"
+          // top="63px"
+          // left="-0.3px"
+          // border="0.3px SOLID rgba(197,197,197,1)"
+          // borderRadius="99.30000001192093px"
+          // padding="2px 3px 2px 3px"
+          // backgroundColor="rgba(15,9,38,1)"
+          // zIndex="200000"
+          // {...getOverrideProps(overrides, "Frame 3")}
         >
           <Flex
             gap="1.2000000476837158px"
@@ -1227,7 +1207,7 @@ export default function IPhone13141(props) {
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Buttons151357")}
           >
-            <Icon
+            {/* <Icon
               width="5px"
               height="5px"
               viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1251,8 +1231,8 @@ export default function IPhone13141(props) {
               shrink="0"
               position="relative"
               {...getOverrideProps(overrides, "power on button151304")}
-            ></Icon>
-            <Icon
+            ></Icon> */}
+            {/* <Icon
             
               width="5px"
               height="5px"
@@ -1278,7 +1258,7 @@ export default function IPhone13141(props) {
               position="relative"
               {...getOverrideProps(overrides, "Stop button151354")}
              
-            ></Icon>
+            ></Icon> */}
             <View
               width="5px"
               height="5px"
@@ -1325,7 +1305,7 @@ export default function IPhone13141(props) {
           {...getOverrideProps(overrides, "Ellipse 3")}
           */
         ></Icon>
-        <Image
+        {/* <Image
           width="28.07px"
           height="16.28px"
           display="block"
@@ -1342,7 +1322,7 @@ export default function IPhone13141(props) {
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.18.36_AM-removebg-preview 3132413"
           )}
-        ></Image>
+        ></Image> */}
         <Icon
           width="4.13px"
           height="4.07px"
@@ -1392,7 +1372,7 @@ export default function IPhone13141(props) {
             height="5.29px"
             {...getOverrideProps(overrides, "arrow-up-square-2151379")}
           ></View>
-          <Icon
+          {/* <Icon
             width="4.13px"
             height="4.07px"
             viewBox={{
@@ -1421,7 +1401,7 @@ export default function IPhone13141(props) {
             shrink="0"
             position="relative"
             {...getOverrideProps(overrides, "Stop button151386")}
-          ></Icon>
+          ></Icon> */}
           <Flex
             gap="10px"
             direction="row"
@@ -1456,7 +1436,7 @@ export default function IPhone13141(props) {
           </Flex>
         </Flex>
       </View>
-      <Image
+      {/* <Image
         width="15px"
         height="98px"
         display="block"
@@ -1473,8 +1453,8 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.02.31_AM-removebg-preview 4"
         )}
-      ></Image>
-      <Image
+      ></Image> */}
+      {/* <Image
         width="15px"
         height="90px"
         display="block"
@@ -1491,8 +1471,8 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.02.31_AM-removebg-preview 5"
         )}
-      ></Image>
-      <Image
+      ></Image> */}
+       {/* <Image
         width="15px"
         height="98px"
         display="block"
@@ -1509,7 +1489,7 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.02.31_AM-removebg-preview 6"
         )}
-      ></Image>
+      ></Image>  */}
       <Icon 
       /*
         width="5px"
@@ -1595,7 +1575,7 @@ export default function IPhone13141(props) {
         {...getOverrideProps(overrides, "Ellipse 7")} 
         */
       ></Icon>
-      <Icon
+      {/* <Icon
         width="5px"
         height="5px"
         viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1620,8 +1600,8 @@ export default function IPhone13141(props) {
         top="77px"
         left="240px"
         {...getOverrideProps(overrides, "Stop button151416")}
-      ></Icon>
-      <Icon
+      ></Icon> */}
+      {/* <Icon
         width="5px"
         height="5px"
         viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1646,8 +1626,8 @@ export default function IPhone13141(props) {
         top="152px"
         left="104px"
         {...getOverrideProps(overrides, "Stop button151414")}
-      ></Icon>
-      <Icon
+      ></Icon> */}
+      {/* <Icon
         width="5px"
         height="5px"
         viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1672,7 +1652,7 @@ export default function IPhone13141(props) {
         top="182px"
         left="16px"
         {...getOverrideProps(overrides, "Stop button151418")}
-      ></Icon>
+      ></Icon> */}
       <View
         width="6.5px"
         height="6.5px"
@@ -1702,18 +1682,18 @@ export default function IPhone13141(props) {
         {...getOverrideProps(overrides, "Water Containers")}
       >
         <Flex
-          padding="0px 0px 0px 0px"
-          width="83px"
-          height="118px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          shrink="0"
-          position="relative"
-          {...getOverrideProps(overrides, "Water container 1")}
+          // padding="0px 0px 0px 0px"
+          // width="83px"
+          // height="118px"
+          // display="block"
+          // gap="unset"
+          // alignItems="unset"
+          // justifyContent="unset"
+          // shrink="0"
+          // position="relative"
+          // {...getOverrideProps(overrides, "Water container 1")}
         >
-          <Image
+          {/* <Image
             width="83px"
             height="93px"
             display="block"
@@ -1730,7 +1710,7 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview 4"
             )}
-          ></Image>
+          ></Image> */}
           <Icon
             width="10px"
             height="10px"
@@ -1764,7 +1744,7 @@ export default function IPhone13141(props) {
             right="46.99%"
             {...getOverrideProps(overrides, "power on button151223")}
           ></Icon>
-          <Image
+          {/* <Image
             width="34px"
             height="18px"
             display="block"
@@ -1782,7 +1762,7 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 11"
             )}
-          ></Image>
+          ></Image> */}
           <Icon
             width="5px"
             height="5px"
@@ -1822,24 +1802,24 @@ export default function IPhone13141(props) {
           position="relative"
           {...getOverrideProps(overrides, "Water container 2")}
         >
-          <Image
-            width="82px"
-            height="93px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            position="absolute"
-            top="0px"
+          {/* <Image
+            width="800px"
+            height="170px"
+             display="block"
+             gap="unset"
+             alignItems="unset"
+             justifyContent="unset"
+             position="absolute"
+            top="-150px"
             left="0px"
             padding="0px 0px 0px 0px"
-            objectFit="cover"
-            src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview.png"
+            //objectFit="cover"
+            src="/Group 16.png"
             {...getOverrideProps(
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview 3"
             )}
-          ></Image>
+          ></Image> */}
           <Icon
             width="10px"
             height="10px"
@@ -1871,7 +1851,7 @@ export default function IPhone13141(props) {
             left="33px"
             {...getOverrideProps(overrides, "power of button151224")}
           ></Icon>
-          <Image
+          {/* <Image
             width="34px"
             height="18px"
             display="block"
@@ -1879,17 +1859,17 @@ export default function IPhone13141(props) {
             alignItems="unset"
             justifyContent="unset"
             position="absolute"
-            top="98px"
+            top="10px"
             left="19px"
             padding="0px 0px 0px 0px"
             objectFit="cover"
-            src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview.png"
+            src="/Group_13__1_-removebg-preview.png"
 
             {...getOverrideProps(
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 7132399"
             )}
-          ></Image>
+          ></Image> */}
           <Icon
             width="5px"
             height="5px"
@@ -1943,7 +1923,7 @@ export default function IPhone13141(props) {
           position="relative"
           {...getOverrideProps(overrides, "Chemical 1")}
         >
-          <Image
+          {/* <Image
             width="44.53px"
             height="72.91px"
             display="block"
@@ -1960,8 +1940,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.31_AM-removebg-preview 10"
             )}
-          ></Image>
-          <Image
+          ></Image> */}
+          {/* <Image
             width="25.64px"
             height="14.31px"
             display="block"
@@ -1978,8 +1958,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.47_AM-removebg-preview 5"
             )}
-          ></Image>
-          <Icon
+          ></Image> */}
+          {/* <Icon
             width="4.72px"
             height="4.77px"
             viewBox={{
@@ -2009,7 +1989,7 @@ export default function IPhone13141(props) {
             top="65.73px"
             left="26.66px"
             {...getOverrideProps(overrides, "Red button151337")}
-          ></Icon>
+          ></Icon> */}
           <Flex
             gap="9px"
             direction="row"
@@ -2028,7 +2008,7 @@ export default function IPhone13141(props) {
               height="8px"
               {...getOverrideProps(overrides, "arrow-up-square-2151459")}
             ></View>
-            <Icon
+            {/* <Icon
               width="6px"
               height="6px"
               viewBox={{ minX: 0, minY: 0, width: 6, height: 6 }}
@@ -2052,7 +2032,7 @@ export default function IPhone13141(props) {
               shrink="0"
               position="relative"
               {...getOverrideProps(overrides, "Stop button151245")}
-            ></Icon>
+            ></Icon> */}
           </Flex>
         </Flex>
         <Flex
@@ -2067,7 +2047,7 @@ export default function IPhone13141(props) {
           position="relative"
           {...getOverrideProps(overrides, "Chemical 2")}
         >
-          <Image
+          {/* <Image
             width="44.53px"
             height="72.91px"
             display="block"
@@ -2085,8 +2065,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.31_AM-removebg-preview 9"
             )}
-          ></Image>
-          <Image
+          ></Image> */}
+          {/* <Image
             width="25.64px"
             height="14.31px"
             display="block"
@@ -2103,8 +2083,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.47_AM-removebg-preview 6"
             )}
-          ></Image>
-          <Icon
+          ></Image> */}
+          {/* <Icon
             width="4.72px"
             height="4.77px"
             viewBox={{
@@ -2134,7 +2114,7 @@ export default function IPhone13141(props) {
             top="65.73px"
             left="25.99px"
             {...getOverrideProps(overrides, "Red button151335")}
-          ></Icon>
+          ></Icon> */}
           <Flex
             gap="9px"
             direction="row"
@@ -2153,7 +2133,7 @@ export default function IPhone13141(props) {
               height="8px"
               {...getOverrideProps(overrides, "arrow-up-square-2151466")}
             ></View>
-            <Icon
+            {/* <Icon
               width="6px"
               height="6px"
               viewBox={{ minX: 0, minY: 0, width: 6, height: 6 }}
@@ -2177,7 +2157,7 @@ export default function IPhone13141(props) {
               shrink="0"
               position="relative"
               {...getOverrideProps(overrides, "Stop button151243")}
-            ></Icon>
+            ></Icon> */}
           </Flex>
         </Flex>
         <Flex
@@ -2192,7 +2172,7 @@ export default function IPhone13141(props) {
           position="relative"
           {...getOverrideProps(overrides, "Chemical 3")}
         >
-          <Image
+          {/* <Image
             width="44.53px"
             height="72.91px"
             display="block"
@@ -2210,8 +2190,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.31_AM-removebg-preview 11"
             )}
-          ></Image>
-          <Image
+          ></Image> */}
+          {/* <Image
             width="25.64px"
             height="14.31px"
             display="block"
@@ -2228,7 +2208,7 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.47_AM-removebg-preview 4"
             )}
-          ></Image>
+          ></Image> */}
           <Icon
             width="4.72px"
             height="4.77px"
@@ -2344,7 +2324,7 @@ export default function IPhone13141(props) {
           //)}
         ></Image> 
         <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-  <Image
+  {/* <Image
     width="18px"
     height="9px"
     position="absolute"
@@ -2357,7 +2337,7 @@ export default function IPhone13141(props) {
       overrides,
       "WhatsApp_Image_2024-08-20_at_1.18.36_AM-removebg-preview 3132383"
     )}
-  />
+  /> */}
 </div>
 
       </Flex>
@@ -2387,7 +2367,7 @@ export default function IPhone13141(props) {
           left="5.95px"
           {...getOverrideProps(overrides, "Group 2")}
         >
-          <Image
+          {/* <Image
             width="97.25px"
             height="16.16px"
             display="block"
@@ -2404,8 +2384,8 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-22_at_9.26.52_PM-removebg-preview 2"
             )}
-          ></Image>
-          <Image
+          ></Image> */}
+          {/* <Image
             width="19.68px"
             height="8.58px"
             display="block"
@@ -2423,7 +2403,7 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 7132329"
             )}
-          ></Image>
+          ></Image> */}
           <Image
             /*width="19.68px"
             height="8.58px"
@@ -2700,7 +2680,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview 8"
             )}
           ></Image>
-          <Image
+          {/* <Image
             width="112px"
             height="19.74px"
             display="block"
@@ -2717,7 +2697,7 @@ export default function IPhone13141(props) {
               overrides,
               "WhatsApp_Image_2024-08-20_at_1.28.26_AM__1_-removebg-preview 2"
             )}
-          ></Image>
+          ></Image> */}
           <Image
             //width="17.33px"
             //height="19.27px"
@@ -3189,7 +3169,7 @@ export default function IPhone13141(props) {
           {...getOverrideProps(overrides, "Vector151226")}
         ></Icon>
       </Flex>
-      <Image
+      {/* <Image
         width="61px"
         height="87px"
         display="block"
@@ -3204,7 +3184,7 @@ export default function IPhone13141(props) {
         style={{ zIndex: 9999 }}
         src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.13.07_AM__1_-removebg-preview.png"
         {...getOverrideProps(overrides, "Conveyor line")}
-      ></Image>
+      ></Image> */}
       <Icon
         width="24px"
         height="0px"
@@ -3289,7 +3269,7 @@ export default function IPhone13141(props) {
         transform="rotate(-90deg)"
         {...getOverrideProps(overrides, "Line 16183220")}
       ></Icon>
-      <Image
+       {/* <Image
         width="66px"
         height="55px"
         display="block"
@@ -3306,8 +3286,8 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.05.23_AM-removebg-preview 3"
         )}
-      ></Image>
-      <Image
+      ></Image>  */}
+      {/* <Image
         width="66px"
         height="55px"
         display="block"
@@ -3329,7 +3309,7 @@ export default function IPhone13141(props) {
           overrides,
           "WhatsApp_Image_2024-08-22_at_9.05.23_AM-removebg-preview 4"
         )}
-      ></Image>
+      ></Image> */}
       <Icon
         width="92px"
         height="0px"
@@ -3422,7 +3402,7 @@ export default function IPhone13141(props) {
         {...getOverrideProps(overrides, "Line 18183226")}
       ></Icon>
     <div style={{ position: 'relative', width: '300px', height: '300px' }}>
-  <img
+  {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_202605-removebg-preview.png"
      alt="Background image"
     style={{
@@ -3433,9 +3413,9 @@ export default function IPhone13141(props) {
       left: '142px',
        zIndex: 0,
     }}
-  />
+  /> */}
 
-  <img
+  {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.23.02_AM__1_-removebg-preview.png"
     alt="Second image"
     style={{
@@ -3445,8 +3425,8 @@ export default function IPhone13141(props) {
       top: '207px',   // 115 - 50
       left: '166px', // 20 - 70
     }}
-  />
-<img
+  /> */}
+{/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_13-6-2025_17540_-removebg-preview.png"
      alt="Background image"
     style={{
@@ -3457,8 +3437,44 @@ export default function IPhone13141(props) {
       left: '262px',
        zIndex: 0,
     }}
+  /> */}
+  {/* <img
+    src="/Group 16 (1).png"
+     alt="water"
+    style={{
+      width: '150px',
+      height: '150',
+      position: 'absolute',
+      top: '-15px',
+      left: '220px',
+       zIndex: 0,
+    }}
   />
-<img
+  <img
+    src="/Group 18 (3).png"
+     alt="silo"
+    style={{
+      width: '180px',
+      height: '150',
+      position: 'absolute',
+      top: '-15px',
+      left: '20px',
+       zIndex: 0,
+    }}
+  />
+  <img
+    src="/Group 19 (3).png"
+     alt="silo"
+    style={{
+      width: '340px',
+      height: '400',
+      position: 'absolute',
+      top: '250px',
+      left: '20px',
+       zIndex: 0,
+    }}
+  /> */}
+{/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview+(1).png"
      alt="Background image"
     style={{
@@ -3469,8 +3485,8 @@ export default function IPhone13141(props) {
       left: '233px',
        zIndex: 0,
     }}
-  />
-  <img
+  /> */}
+  {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_172811-removebg-preview.png"
      alt="Background image"
     style={{
@@ -3481,13 +3497,13 @@ export default function IPhone13141(props) {
       left: '60px',
        zIndex: 0,
     }}
-  />
+  /> */}
   <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.09.28_AM-removebg-preview.png"
      alt="Background image"
     style={{
-      width: '60px',
-      height: '60px',
+      width: '70px',
+      height: '70px',
       position: 'absolute',
       top: '-90px',
       left: '320px',

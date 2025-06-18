@@ -19,6 +19,8 @@ import ConcreteMixForm from './components/ConcreteMixForm';
 import ReportsPage from './components/Reports/ReportsPage';
 import { Link } from 'react-router-dom';
 
+
+
 import { withAuthenticator } from '@aws-amplify/ui-react';
 //import SecuredButtons from './components/SecuredButtons';
 
@@ -318,6 +320,7 @@ function App() {
           path="/"
           element={
             <Authenticator>
+              
               {({ signOut, user }) => {
                 setIsSignedIn(true);
                 return isSignedIn && <Navigate to="/new" replace={true} />;
@@ -329,12 +332,12 @@ function App() {
         <Route
           path="/new"
           element={
-            <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <div style={{ textAlign: "center", marginTop: "0px" }}>
               <Authenticator>
                 {({ signOut, user }) => (
                   <div>
-                    <h1>Welcome, {user.username}!</h1>
-                    <p>You are now signed in.</p>
+                    
+{/*                     
                     <button
                       onClick={signOut}
                       style={{
@@ -347,7 +350,8 @@ function App() {
                       }}
                     >
                       Sign Out
-                    </button>
+                    </button> */}
+                    
                     {user.username.toLowerCase() === "merna" && (
 
                       <Link to="/concrete-mix">
@@ -390,7 +394,7 @@ function App() {
                       </Link>
                     )}
 
-                    <p>..</p>
+                    
                     <IPhone13141 />
                     <Flex overflow="auto" />
                     <img

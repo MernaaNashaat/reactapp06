@@ -301,6 +301,14 @@ const exportPDF = () => {
 
     return (
         <div className="reports-container">
+            {/* Add this image div at the top */}
+            <div className="header-image">
+                <img 
+                    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot+2025-06-14+033134.png" 
+                    alt="Batching Report Header"
+                    style={{ width: '100%', maxHeight: '300px', objectFit: 'contain' }}
+                />
+                 </div>
             <div className="filter-export-section">
                 <div className="filter-row">
                     <div className="filter-group">
