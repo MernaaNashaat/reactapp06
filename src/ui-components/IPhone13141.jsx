@@ -27,7 +27,7 @@ export default function IPhone13141(props) {
       padding="0px 0px 0px 0px"
        //backgroundImage="linear-gradient( rgb(12, 11, 13), rgb(4, 2, 17), rgb(6, 6, 12))"
 
-      backgroundColor=" rgb(1, 5, 13)"
+      backgroundColor=" rgb(221, 224, 231)"
       
       {...getOverrideProps(overrides, "IPhone13141")}
       {...rest}
@@ -971,7 +971,7 @@ export default function IPhone13141(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Mixer")}
       >
-        <Image
+        {/* <Image
           width="10px"
           height="22.31px"
           display="block"
@@ -987,7 +987,7 @@ export default function IPhone13141(props) {
             overrides,
             "WhatsApp_Image_2024-08-22_at_9.25.21_PM__1_-removebg-preview 2"
           )}
-        ></Image>
+        ></Image> */}
         {/* <Image
           width="100px"
           height="130px"
@@ -1056,7 +1056,7 @@ export default function IPhone13141(props) {
 
 
 
-          <Icon
+          {/* <Icon
           
             width="10px"
             height="10px"
@@ -1087,7 +1087,7 @@ export default function IPhone13141(props) {
             position="relative"
             {...getOverrideProps(overrides, "Stop button151249")}
             
-          ></Icon>
+          ></Icon> */}
         </Flex>
         <Icon 
         /*
@@ -1323,7 +1323,7 @@ export default function IPhone13141(props) {
             "WhatsApp_Image_2024-08-20_at_1.18.36_AM-removebg-preview 3132413"
           )}
         ></Image> */}
-        <Icon
+        {/* <Icon
           width="4.13px"
           height="4.07px"
           viewBox={{
@@ -1353,7 +1353,7 @@ export default function IPhone13141(props) {
           top="91.98px"
           left="59.36px"
           {...getOverrideProps(overrides, "Red button151352")}
-        ></Icon>
+        ></Icon> */}
         <Flex
           gap="2px"
           direction="row"
@@ -1403,21 +1403,21 @@ export default function IPhone13141(props) {
             {...getOverrideProps(overrides, "Stop button151386")}
           ></Icon> */}
           <Flex
-            gap="10px"
-            direction="row"
-            width="4.13px"
-            height="4.07px"
-            justifyContent="center"
-            alignItems="center"
-            overflow="hidden"
-            shrink="0"
-            position="relative"
-            borderRadius="99px"
-            padding="0px 0px 0px 0px"
-            backgroundColor="rgba(255,255,255,1)"
-            {...getOverrideProps(overrides, "Frame 1151437")}
+            // gap="10px"
+            // direction="row"
+            // width="4.13px"
+            // height="4.07px"
+            // justifyContent="center"
+            // alignItems="center"
+            // overflow="hidden"
+            // shrink="0"
+            // position="relative"
+            // borderRadius="99px"
+            // padding="0px 0px 0px 0px"
+            // backgroundColor="rgba(255,255,255,1)"
+            // {...getOverrideProps(overrides, "Frame 1151437")}
           >
-            <Image
+            {/* <Image
               width="4px"
               height="4px"
               display="block"
@@ -1432,7 +1432,7 @@ export default function IPhone13141(props) {
                 overrides,
                 "WhatsApp Image 2024-08-22 at 9.06.53 AM 3132309"
               )}
-            ></Image>
+            ></Image> */}
           </Flex>
         </Flex>
       </View>
@@ -1711,9 +1711,11 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview 4"
             )}
           ></Image> */}
-          <Icon
-            width="10px"
-            height="10px"
+          
+          {/* <Icon
+          //mmkn
+            width="50px"
+            height="50px"
             viewBox={{
               minX: 0,
               minY: 0,
@@ -1738,12 +1740,12 @@ export default function IPhone13141(props) {
             alignItems="unset"
             justifyContent="unset"
             position="absolute"
-            top="30.51%"
-            bottom="61.02%"
+            top="5%"
+            //bottom="61.02%"
             left="40.96%"
             right="46.99%"
             {...getOverrideProps(overrides, "power on button151223")}
-          ></Icon>
+          ></Icon> */}
           {/* <Image
             width="34px"
             height="18px"
@@ -1763,7 +1765,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 11"
             )}
           ></Image> */}
-          <Icon
+          {/* <Icon
             width="5px"
             height="5px"
             viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1788,7 +1790,7 @@ export default function IPhone13141(props) {
             top="103px"
             left="49px"
             {...getOverrideProps(overrides, "Red button151347")}
-          ></Icon>
+          ></Icon> */}
         </Flex>
         <Flex
           padding="0px 0px 0px 0px"
@@ -1820,9 +1822,10 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview 3"
             )}
           ></Image> */}
-          <Icon
-            width="10px"
-            height="10px"
+          <Icon 
+          //waterindicator
+            width="15px"
+            height="15px"
             viewBox={{
               minX: 0,
               minY: 0,
@@ -1842,14 +1845,14 @@ export default function IPhone13141(props) {
                 fillRule: "nonzero",
               },
             ]}
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            position="absolute"
-            top="35px"
-            left="33px"
+            style={{
+    position: "absolute",
+    top: "-148px",
+    left: "25px",
+    zIndex: 10, // higher than image zIndex: 0
+  }}
             {...getOverrideProps(overrides, "power of button151224")}
+
           ></Icon>
           {/* <Image
             width="34px"
@@ -1870,7 +1873,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 7132399"
             )}
           ></Image> */}
-          <Icon
+          {/* <Icon
             width="5px"
             height="5px"
             viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
@@ -1895,7 +1898,7 @@ export default function IPhone13141(props) {
             top="101px"
             left="43px"
             {...getOverrideProps(overrides, "Red button151349")}
-          ></Icon>
+          ></Icon> */}
         </Flex>
       </Flex>
       <Flex
@@ -2209,7 +2212,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.19.47_AM-removebg-preview 4"
             )}
           ></Image> */}
-          <Icon
+          {/* <Icon
             width="4.72px"
             height="4.77px"
             viewBox={{
@@ -2239,7 +2242,7 @@ export default function IPhone13141(props) {
             top="65.73px"
             left="27.33px"
             {...getOverrideProps(overrides, "Red button151339")}
-          ></Icon>
+          ></Icon> */}
           <Flex
             gap="9px"
             direction="row"
@@ -2258,7 +2261,7 @@ export default function IPhone13141(props) {
               height="8px"
               {...getOverrideProps(overrides, "arrow-up-square-2151452")}
             ></View>
-            <Icon
+            {/* <Icon
               width="6px"
               height="6px"
               viewBox={{ minX: 0, minY: 0, width: 6, height: 6 }}
@@ -2282,7 +2285,7 @@ export default function IPhone13141(props) {
               shrink="0"
               position="relative"
               {...getOverrideProps(overrides, "Stop button151247")}
-            ></Icon>
+            ></Icon> */}
           </Flex>
         </Flex>
       </Flex>
@@ -2461,7 +2464,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview 10"
             )}
           ></Image>
-          <Icon
+          {/* <Icon
             width="2.89px"
             height="2.52px"
             viewBox={{
@@ -2492,7 +2495,7 @@ export default function IPhone13141(props) {
             left="97.25px"
             {...getOverrideProps(overrides, "Red button151364")}
             
-          ></Icon>
+          ></Icon> */}
           <Icon
           /*
             width="2.89px"
@@ -2594,17 +2597,17 @@ export default function IPhone13141(props) {
           ></Icon>
         </View>
         <View
-          padding="0px 0px 0px 0px"
-          width="297px"
-          height="183px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="0px"
-          left="0px"
-          {...getOverrideProps(overrides, "Group 1")}
+          // padding="0px 0px 0px 0px"
+          // width="297px"
+          // height="183px"
+          // display="block"
+          // gap="unset"
+          // alignItems="unset"
+          // justifyContent="unset"
+          // position="absolute"
+          // top="0px"
+          // left="0px"
+          // {...getOverrideProps(overrides, "Group 1")}
         >
           <Image
            /* width="6.19px"
@@ -2791,7 +2794,7 @@ export default function IPhone13141(props) {
               height="5px"
               {...getOverrideProps(overrides, "arrow-up-square-2151518")}
             ></View>
-            <Icon
+            {/* <Icon
               width="4px"
               height="4px"
               viewBox={{ minX: 0, minY: 0, width: 4, height: 4 }}
@@ -2815,23 +2818,23 @@ export default function IPhone13141(props) {
               shrink="0"
               position="relative"
               {...getOverrideProps(overrides, "Stop button151251")}
-            ></Icon>
+            ></Icon> */}
             <Flex
-              gap="10px"
-              direction="row"
-              width="4px"
-              height="4px"
-              justifyContent="center"
-              alignItems="center"
-              overflow="hidden"
-              shrink="0"
-              position="relative"
-              borderRadius="99px"
-              padding="0px 0px 0px 0px"
-              backgroundColor="rgba(255,255,255,1)"
-              {...getOverrideProps(overrides, "Frame 1151438")}
+              // gap="10px"
+              // direction="row"
+              // width="4px"
+              // height="4px"
+              // justifyContent="center"
+              // alignItems="center"
+              // overflow="hidden"
+              // shrink="0"
+              // position="relative"
+              // borderRadius="99px"
+              // padding="0px 0px 0px 0px"
+              // backgroundColor="rgba(255,255,255,1)"
+              // {...getOverrideProps(overrides, "Frame 1151438")}
             >
-              <Image
+              {/* <Image
                 width="3.5px"
                 height="3.5px"
                 display="block"
@@ -2846,7 +2849,7 @@ export default function IPhone13141(props) {
                   overrides,
                   "WhatsApp Image 2024-08-22 at 9.06.53 AM 3151439"
                 )}
-              ></Image>
+              ></Image> */}
             </Flex>
           </Flex>
           <View
@@ -3068,9 +3071,9 @@ export default function IPhone13141(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Buttons15197")}
       >
-        <Icon
-          width="5px"
-          height="5px"
+        {/* <Icon
+          width="10px"
+          height="10px"
           viewBox={{ minX: 0, minY: 0, width: 5, height: 5.000000476837158 }}
           paths={[
             {
@@ -3092,10 +3095,10 @@ export default function IPhone13141(props) {
           shrink="0"
           position="relative"
           {...getOverrideProps(overrides, "power of button151232")}
-        ></Icon>
-        <Icon
-          width="5px"
-          height="5px"
+        ></Icon> */}
+        {/* <Icon
+          width="10px"
+          height="10px"
           viewBox={{ minX: 0, minY: 0, width: 5, height: 5.000000476837158 }}
           paths={[
             {
@@ -3117,10 +3120,11 @@ export default function IPhone13141(props) {
           shrink="0"
           position="relative"
           {...getOverrideProps(overrides, "Vector151230")}
-        ></Icon>
-        <Icon
-          width="5px"
-          height="5px"
+        ></Icon> */}
+        <Icon 
+        //indicatorbins
+          width="15px"
+          height="15px"
           viewBox={{ minX: 0, minY: 0, width: 5, height: 5 }}
           paths={[
             {
@@ -3135,17 +3139,17 @@ export default function IPhone13141(props) {
               fillRule: "nonzero",
             },
           ]}
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          shrink="0"
-          position="relative"
+          style={{
+    position: "absolute",
+    top: "40px",
+    left: "40px",
+    zIndex: 10, // higher than image zIndex: 0
+  }}
           {...getOverrideProps(overrides, "Vector151228")}
         ></Icon>
         <Icon
-          width="5px"
-          height="5px"
+          width="15px"
+          height="15px"
           viewBox={{ minX: 0, minY: 0, width: 5, height: 5.000000476837158 }}
           paths={[
             {
@@ -3160,12 +3164,12 @@ export default function IPhone13141(props) {
               fillRule: "nonzero",
             },
           ]}
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          shrink="0"
-          position="relative"
+          style={{
+    position: "absolute",
+    top: "40px",
+    left: "100px",
+    zIndex: 10, // higher than image zIndex: 0
+  }}
           {...getOverrideProps(overrides, "Vector151226")}
         ></Icon>
       </Flex>
@@ -3438,7 +3442,7 @@ export default function IPhone13141(props) {
        zIndex: 0,
     }}
   /> */}
-  {/* <img
+     <img
     src="/Group 16 (1).png"
      alt="water"
     style={{
@@ -3449,9 +3453,9 @@ export default function IPhone13141(props) {
       left: '220px',
        zIndex: 0,
     }}
-  />
+  />  
   <img
-    src="/Group 18 (3).png"
+    src="/Group 18 (5).png"
      alt="silo"
     style={{
       width: '180px',
@@ -3462,18 +3466,43 @@ export default function IPhone13141(props) {
        zIndex: 0,
     }}
   />
-  <img
-    src="/Group 19 (3).png"
+   <img
+    src="/Group 22.png"
      alt="silo"
     style={{
-      width: '340px',
-      height: '400',
+      width: '400px',
+      height: '500',
       position: 'absolute',
       top: '250px',
       left: '20px',
        zIndex: 0,
     }}
-  /> */}
+  />  
+  <img
+    src="/Group 23.png"
+     alt="pipes"
+    style={{
+      width: '140px',
+      height: '20',
+      position: 'absolute',
+      top: '210px',
+      left: '150px',
+       zIndex: 0,
+    }}
+  />  
+  
+  <img
+    src="/Group 24.png"
+     alt="pipes"
+    style={{
+      width: '13px',
+      height: '5.5',
+      position: 'absolute',
+      top: '212px',
+      left: '310px',
+       zIndex: 0,
+    }}
+  /> 
 {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview+(1).png"
      alt="Background image"
@@ -3498,7 +3527,7 @@ export default function IPhone13141(props) {
        zIndex: 0,
     }}
   /> */}
-  <img
+  {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.09.28_AM-removebg-preview.png"
      alt="Background image"
     style={{
@@ -3509,9 +3538,9 @@ export default function IPhone13141(props) {
       left: '320px',
        zIndex: 0,
     }}
-  />
+  /> */}
   
-   <img
+   {/* <img
    
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.19.07_AM-removebg-preview+7.png"
      alt="Background image"
@@ -3524,7 +3553,7 @@ export default function IPhone13141(props) {
        zIndex: 0,
     }}
        
-  />
+  /> */}
 
 </div>
     </View>

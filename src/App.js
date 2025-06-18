@@ -18,6 +18,7 @@ import { Icon } from "@aws-amplify/ui-react"; // Import if using Amplify UI
 import ConcreteMixForm from './components/ConcreteMixForm';
 import ReportsPage from './components/Reports/ReportsPage';
 import { Link } from 'react-router-dom';
+import Header from './components/Header/Header';
 
 
 
@@ -55,6 +56,14 @@ function App() {
   const [imageUrl1, setImageUrl1] = useState(
     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
   );
+const [imageUrl3, setImageUrl3] = useState(
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/remove_the_blue_bin_-removebg-previeww.png"
+  );
+  const [imageUrl4, setImageUrl4] = useState(
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
+  );
+
+
 
   const mixerGateColor = mixerGate ? "#E3E4E4" : "rgba(0,221,32,1)";
   const Weighing_conveyorColor = Weighing_conveyor ? "#E3E4E4" : "rgba(0,221,32,1)";
@@ -64,6 +73,10 @@ function App() {
 
   const [showSecondaryImage, setShowSecondaryImage] = useState(false);
   const [showSecondaryImage1, setShowSecondaryImage1] = useState(false);
+  const [showSecondaryImage3, setShowSecondaryImage3] = useState(false);
+  const [showSecondaryImage4, setShowSecondaryImage4] = useState(false);
+
+
 
   const [weight, setWeight] = useState(null); // State to hold the weight value
   const [Weight_cement, setWeight2] = useState(null); // State to hold the weight cement value
@@ -114,6 +127,28 @@ function App() {
             "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
           );
         }
+
+
+console.log("Full data received:", data);
+        console.log("Message details:", data.Cement_Hopper_gate);
+        // Add additional logging if needed
+        if (data.Cement_Hopper_gate === true) {
+          setImageUrl3(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM__1_-removebg-preview.png"
+          );
+          // Show the secondary image with animation
+          setShowSecondaryImage3(true);
+
+          // Hide the image after the animation
+          setTimeout(() => setShowSecondaryImage3(false), 13000);
+        }
+        else {
+
+          setImageUrl3(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/remove_the_blue_bin_-removebg-previeww.png"
+          );
+        }
+
         console.log("Full data received:", data);
         console.log("Message details:", data.Aggregate_2_bin_gate);
         if (data.Aggregate_2_bin_gate === true) {
@@ -131,6 +166,26 @@ function App() {
             "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
           );
         }
+
+console.log("Full data received:", data);
+        console.log("Message details:", data.Mixer_pin_gate);
+        if (data.Mixer_pin_gate === true) {
+          setImageUrl4(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM__1_-removebg-preview.png"
+          );
+          // Show the secondary image with animation
+          setShowSecondaryImage4(true);
+
+          // Hide the image after the animation
+          setTimeout(() => setShowSecondaryImage4(false), 13000);
+
+        } else {
+          setImageUrl4(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
+          );
+        }
+
+
         // Update the weight state if it exists in the received data
         if (data.weight !== undefined) {
           setWeight(data.weight);
@@ -150,15 +205,15 @@ function App() {
         }
 
 
-        console.log("Received data:", data);
-        if (data.Mixer === false) {
-          setIsActive(true);
-        } else {
-          setIsActive(false);
-        }
+        // console.log("Received data:", data);
+        // if (data.Mixer === false) {
+        //   setIsActive(true);
+        // } else {
+        //   setIsActive(false);
+        // }
 
         console.log("Received data:", data);
-        if (data.Mixer_gate === false) {
+        if (data.Mixer === false) {
           setMixerGate(true);
         } else {
           setMixerGate(false);
@@ -336,7 +391,7 @@ function App() {
               <Authenticator>
                 {({ signOut, user }) => (
                   <div>
-                    
+                    <Header user={user} signOut={signOut} />
 {/*                     
                     <button
                       onClick={signOut}
@@ -362,7 +417,7 @@ function App() {
                           height="32px"
                           style={{
                             position: "absolute",
-                            top: "1047px",
+                            top: "790px",
                             left: "330px",
                             zIndex: 999,
                             objectFit: "cover",
@@ -401,12 +456,12 @@ function App() {
                       src={imageUrl}
                       alt="Dynamic IoT"
                       style={{
-                        width: "17.33px",
-                        height: "19.27px",
+                        width: "45px",
+                        height: "40px",
                         display: "block",
                         position: "absolute",
-                        top: "604px",
-                        left: "84.77px",
+                        top: "400px",
+                        left: "120px",
                         objectFit: "cover",
                         padding: "0px",
                       }}
@@ -415,27 +470,55 @@ function App() {
                       src={imageUrl1}
                       alt="Dynamic IoT"
                       style={{
-                        width: "17.33px",
-                        height: "19.27px",
+                        width: "45px",
+                        height: "40px",
                         display: "block",
                         position: "absolute",
-                        top: "604px",
-                        left: "110px",
+                        top: "400px",
+                        left: "60px",
                         objectFit: "cover",
                         padding: "0px",
                       }}
                     />
+                   <img
+                      src={imageUrl3}
+                      alt="Dynamic IoT"
+                      style={{
+                        width: "90px",
+                        height: "90px",
+                        display: "block",
+                        position: "absolute",
+                        top: "230px",
+                        left: "108px",
+                        objectFit: "cover",
+                        padding: "0px",
+                      }}
+                    />
+                    {/* <img
+                      src={imageUrl4}
+                      alt="Dynamic IoT"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        display: "block",
+                        position: "absolute",
+                        top: "540px",
+                        left: "270px",
+                        objectFit: "cover",
+                        padding: "0px",
+                      }}
+                    /> */}
 
                     {showSecondaryImage && (
                       <img
                         src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
                         alt="Secondary Dynamic IoT"
                         style={{
-                          width: "6.81px",
-                          height: "8.93px",
+                          width: "20px",
+                          height: "20px",
                           position: "absolute",
-                          top: "622px",
-                          left: "115px",
+                          top: "440px",
+                          left: "100px",
                           objectFit: "cover",
                           animation: "moveDown 13s ease-in-out forwards",
                         }}
@@ -446,16 +529,49 @@ function App() {
                         src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
                         alt="Secondary Dynamic IoT"
                         style={{
-                          width: "6.81px",
-                          height: "8.93px",
+                          width: "20px",
+                          height: "20px",
                           position: "absolute",
-                          top: "622px",
-                          left: "90px",
+                          top: "440px",
+                          left: "130px",
                           objectFit: "cover",
                           animation: "moveDown 13s ease-in-out forwards",
                         }}
                       />
                     )}
+                    {showSecondaryImage3 && (
+                      <img
+                        src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
+                        alt="Secondary Dynamic IoT"
+                        style={{
+                          width: "15px",
+                          height: "15px",
+                          position: "absolute",
+                          top: "295px",
+                          left: "145px",
+                          objectFit: "cover",
+                          animation: "moveDown 13s ease-in-out forwards",
+                        }}
+                      />
+                    )}
+                    {showSecondaryImage4 && (
+                      <img
+                        src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
+                        alt="Secondary Dynamic IoT"
+                        style={{
+                          width: "20px",
+                          height: "50px",
+                          position: "absolute",
+                          top: "559px",
+                          left: "288px",
+                          objectFit: "cover",
+                          animation: "moveDown 13s ease-in-out forwards",
+                        }}
+                      />
+                    )}
+
+
+
 
                     <button
                       onClick={publishButton}
@@ -474,42 +590,47 @@ function App() {
                     <div
                       style={{
                         position: "absolute",
-                        top: "649px",
-                        left: "114px",
-                        fontSize: "4px",
-                        fontWeight: "bold",
+                        top: "510px",
+                        left: "118px",
+                        fontSize: "30px",
+                        //fontWeight: "bold",
+                        color: "white",
                       }}
                     >
                       { weight!== null
                         ? `${Number(weight).toFixed(2)} kg`
-                        : "Loading..."}
+                        : "..."}
                     </div>
                     <div
                       style={{
                         position: "absolute",
-                        top: "507px",
-                        left: "190px",
-                        fontSize: "4px",
-                        fontWeight: "bold",
+                        top: "263px",
+                        left: "80px",
+                        fontSize: "30px",
+                        //fontWeight: "bold",
+                         color: "white",
+
                       }}
                     >
                       {Weight_cement !== null
                         ? `${Number(Weight_cement).toFixed(2)} kg`
-                        : "Loading..."}
+                        : "..."}
                     </div>
 
                     <div
                       style={{
                         position: "absolute",
-                        top: "730px",
-                        left: "328px",
-                        fontSize: "4px",
-                        fontWeight: "bold",
+                        top: "261px",
+                        left: "299px",
+                        fontSize: "30px",
+                        //fontWeight: "bold",
+                        color: "white",
+
                       }}
                     >
                       {Weight_water !== null
                         ? `${Number(Weight_water).toFixed(2)} kg`
-                        : "Loading..."}
+                        : "..."}
                     </div>
 
                     <div
@@ -524,7 +645,7 @@ function App() {
                       {State !== null ? `${State} ` : "SCADA"}
 
                     </div>
-                    <div
+                    {/* <div
                       style={{
                         width: "7px",
                         height: "7px",
@@ -538,10 +659,11 @@ function App() {
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
-                    />
+                    /> */}
                     <Icon
-                      width="10px"
-                      height="10px"
+                    //mixerindicator
+                      width="18px"
+                      height="18px"
 
                       viewBox={{
                         minX: 0,
@@ -574,43 +696,45 @@ function App() {
                       shrink="0"
                       style={{
                         position: "absolute",
-                        top: "810px",
-                        left: "220px",
+                        top: "428px",
+                        left: "255px",
                       }}
                     />
 
 
                     <div
                       style={{
-                        width: "7px",
-                        height: "7px",
+                        //silo
+                        width: "10px",
+                        height: "10px",
                         borderRadius: "50%",
                         backgroundColor: isActive1 ? "#E0230D" : "#85CF23",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "267px",
-                        left: "236px",
+                        top: "105px",
+                        left: "90px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
                     />
                     <div
                       style={{
-                        width: "7px",
-                        height: "7px",
+                        width: "10px",
+                        height: "10px",
                         borderRadius: "50%",
                         backgroundColor: isActive2 ? "#E0230D" : "#85CF23",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "440px",
-                        left: "193px",
+                        top: "270px",
+                        left: "98px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
                     />
                     <Icon
+                    //conveyorindicator 
                       width="10px"
                       height="10px"
 
@@ -645,15 +769,15 @@ function App() {
                       shrink="0"
                       style={{
                         position: "absolute",
-                        top: "635px",
-                        left: "123px",
+                        top: "516px",
+                        left: "145px",
                       }}
                     />
 
 
                     <Icon
-                      width="7px"
-                      height="7px"
+                      width="10px"
+                      height="10px"
 
                       viewBox={{
                         minX: 0,
@@ -686,11 +810,11 @@ function App() {
                       shrink="0"
                       style={{
                         position: "absolute",
-                        top: "620px",
-                        left: "150px",
+                        top: "390px",
+                        left: "338px",
                       }} // for water valve elle gayy 
                     />
-                    <div
+                    {/* <div
                       style={{
                         width: "7px",
                         height: "7px",
@@ -704,7 +828,7 @@ function App() {
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
-                    />
+                    /> */}
                     <Icon
                       width="10px"
                       height="10px"
@@ -784,8 +908,24 @@ function App() {
             animation: "moveDown 13s ease-in-out forwards",
           }}
         />
+        
       )}
-
+{showSecondaryImage3 && (
+        <img
+          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
+          alt="Secondary Dynamic IoT"
+          style={{
+            width: "6.81px",
+            height: "8.93px",
+            position: "absolute",
+            top: "200px",
+            left: "90px",
+            objectFit: "cover",
+            animation: "moveDown 13s ease-in-out forwards",
+          }}
+        />
+        
+      )}
 
 
 

@@ -1,0 +1,126 @@
+.header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e5e7eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    color: #4b5563;
+}
+
+.divider {
+    width: 1px;
+    height: 28px;
+    background-color: #d1d5db;
+}
+
+.signout-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.signout-button:hover {
+    color: #111827;
+    background-color: #f3f4f6;
+}
+
+/* Responsive - make smaller without wrapping */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 1.1rem;
+    }
+
+    .logo-img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .user-info {
+        font-size: 0.75rem;
+        gap: 0.3rem;
+    }
+
+    .icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .signout-button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        gap: 0.3rem;
+    }
+
+    .header-right {
+        gap: 0.5rem;
+    }
+}
