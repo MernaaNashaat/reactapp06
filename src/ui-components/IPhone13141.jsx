@@ -846,19 +846,20 @@ export default function IPhone13141(props) {
           {...getOverrideProps(overrides, "alarm")}
         ></View>
         <Image
-          width="32px"
-          height="28.9px"
+        //searches
+          width="50px"
+          height="50px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
           position="absolute"
-          top ="5px"
-          left="10px"
+          top ="-5px"
+          left="5px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.11.29_AM-removebg-preview.png"
+          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/searches-removebg-preview.png"
           {...getOverrideProps(
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.11.29_AM-removebg-preview 2"
@@ -866,18 +867,19 @@ export default function IPhone13141(props) {
         ></Image>
         
         <Image
-          width="32px"
-          height="28.9px"
+          width="50px"
+          height="50px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
-          position="relative"
-          left="-20px"
+          position="absolute"
+          top ="-5px"
+          left="99px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.11.11_AM-removebg-preview.png"
+          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/alert-removebg-preview.png"
           {...getOverrideProps(
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.11.11M-removebg-preview 2"
@@ -905,18 +907,20 @@ export default function IPhone13141(props) {
         ></Image>
         
         <Image
-          width="35px"
-          height="35px"
+        //truck
+         width="50px"
+          height="50px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
           position="absolute"
-          left="210px"
+          top ="-5px"
+          left="198px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.43_AM-removebg-preview.png"
+          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/truck-removebg-preview.png"
           {...getOverrideProps(
             overrides,
             "WhatsApp_Image_2024-08-20_at_1.12.43_AM-removebg-preview 2"
@@ -3495,10 +3499,10 @@ export default function IPhone13141(props) {
     src="/Group 24.svg"
      alt="pipes"
     style={{
-      width: '13px',
-      height: '50px',
+      width: '16px',
+      height: '200px',
       position: 'absolute',
-      top: '205px',
+      top: '124.5px',
       left: '310px',
        zIndex: 0,
     }}

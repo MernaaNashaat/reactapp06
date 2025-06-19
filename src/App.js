@@ -60,7 +60,7 @@ function App() {
     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
   );
 const [imageUrl3, setImageUrl3] = useState(
-    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/remove_the_blue_bin_-removebg-previeww.png"
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
   );
   const [imageUrl4, setImageUrl4] = useState(
     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
@@ -145,7 +145,7 @@ console.log("Full data received:", data);
         // Add additional logging if needed
         if (data.Cement_Hopper_gate === true) {
           setImageUrl3(
-            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM__1_-removebg-preview.png"
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
           );
           // Show the secondary image with animation
           setShowSecondaryImage3(true);
@@ -156,7 +156,7 @@ console.log("Full data received:", data);
         else {
 
           setImageUrl3(
-            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/remove_the_blue_bin_-removebg-previeww.png"
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
           );
         }
 
@@ -500,14 +500,15 @@ console.log("Received data:", data);
                     {user.username.toLowerCase() === "abdulrhman" && (
                       <Link to="/reports">
                         <Image
-                          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.10.58_AM-removebg-preview.png"
+                          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/ChatGPT_Image_Jun_19__2025__07_20_14_PM-removebg-preview.png"
                           alt="Abdulrhman Icon"
-                          width="33px"
-                          height="33px"
+                          width="50px"
+                          height="50px"
+                          
                           style={{
                             position: "absolute",
-                            top: "790px",
-                            left: "330px",
+                            top: "780px",
+                            left: "310px",
                             zIndex: 1000,
                             objectFit: "cover",
                           }}
@@ -641,9 +642,9 @@ console.log("Received data:", data);
                         alt="Secondary Dynamic IoT"
                         style={{
                           width: "15px",
-                          height: "15px",
+                          height: "30px",
                           position: "absolute",
-                          top: "295px",
+                          top: "285px",
                           left: "145px",
                           objectFit: "cover",
                           animation: "moveDown 13s ease-in-out forwards",
@@ -716,7 +717,7 @@ console.log("Received data:", data);
                     <div
                       style={{
                         position: "absolute",
-                        top: "277px",
+                        top: "266px",
                         left: "299px",
                         fontSize: "30px",
                         //fontWeight: "bold",
@@ -729,7 +730,7 @@ console.log("Received data:", data);
                         : "..."}
                     </div>
 
-                    <div
+                    {/* <div
                       style={{
                         position: "absolute",
                         top: "290px",
@@ -740,7 +741,7 @@ console.log("Received data:", data);
                     >
                       {State !== null ? `${State} ` : "loading"}
 
-                    </div>
+                    </div> */}
                     {/* <div
                       style={{
                         width: "7px",
@@ -808,8 +809,8 @@ console.log("Received data:", data);
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "98px",
-                        left: "90px",
+                        top: "105px",
+                        left: "110px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
@@ -823,7 +824,7 @@ console.log("Received data:", data);
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "98px",
+                        top: "104px",
                         left: "325px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
@@ -1010,8 +1011,8 @@ console.log("Received data:", data);
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
           alt="Secondary Dynamic IoT"
           style={{
-            width: "6.81px",
-            height: "8.93px",
+            width: "50px",
+            height: "50px",
             position: "absolute",
             top: "622px",
             left: "115px",
