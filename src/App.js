@@ -44,7 +44,10 @@ function App() {
   const [isActive, setIsActive] = useState(false); //Mixer
   const [isActive1, setIsActive1] = useState(false); //indicator of silo hopper
   const [mixerGate, setMixerGate] = useState(false);  //Mixergate
-  const [isActive2, setIsActive2] = useState(false); //indicator of cement hopper
+  const [isActive2, setIsActive2] = useState(false); //indicator of water tank
+    const [isActive3, setIsActive3] = useState(false); //indicator of convyor tank
+    const [isActive4, setIsActive4] = useState(false); //indicator of mixer 
+
   const [Weighing_conveyor, setWeighing_conveyor] = useState(false);
   const [Inclined_conveyor, setInclined_conveyor] = useState(false);
   const [Water_valve, setWater_valve] = useState(false);
@@ -62,6 +65,12 @@ const [imageUrl3, setImageUrl3] = useState(
   const [imageUrl4, setImageUrl4] = useState(
     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
   );
+const [imageUrl5, setImageUrl5] = useState(
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Manual.svg"
+  );
+const [imageUrl6, setImageUrl6] = useState(
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
+  );
 
 
 
@@ -75,6 +84,8 @@ const [imageUrl3, setImageUrl3] = useState(
   const [showSecondaryImage1, setShowSecondaryImage1] = useState(false);
   const [showSecondaryImage3, setShowSecondaryImage3] = useState(false);
   const [showSecondaryImage4, setShowSecondaryImage4] = useState(false);
+  const [showSecondaryImage5, setShowSecondaryImage5] = useState(false);
+  const [showSecondaryImage6, setShowSecondaryImage6] = useState(false);
 
 
 
@@ -184,6 +195,46 @@ console.log("Full data received:", data);
             "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
           );
         }
+console.log("Full data received:", data);
+        console.log("Message details:", data.Automatic);
+        if (data.Automatic === true) {
+          setImageUrl5(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Automatic.svg"
+          );
+          // Show the secondary image with animation
+          setShowSecondaryImage5(true);
+
+          // Hide the image after the animation
+          setTimeout(() => setShowSecondaryImage5(false), 13000);
+
+        } else {
+          setImageUrl5(
+            "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Manual.svg"
+          );
+        }
+
+console.log("Full data received:", data);
+        console.log("Message details:", data.Inclined_Conveyor_off);
+        if (data.Inclined_Conveyor === true) {
+          setImageUrl6(
+                                    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-10-10_at_1.20.02_AM-removebg-preview+1.svg"
+
+
+          );
+          // Show the secondary image with animation
+          setShowSecondaryImage6(true);
+
+          // Hide the image after the animation
+          setTimeout(() => setShowSecondaryImage6(false), 13000);
+
+        } else {
+          setImageUrl6(
+
+                                    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
+
+          );
+        }
+
 
 
         // Update the weight state if it exists in the received data
@@ -225,11 +276,27 @@ console.log("Full data received:", data);
           setIsActive1(false);
         }
         console.log("Received data:", data);
-        if (data.Cement_Hopper_gate === false) {
+        if (data.Water_Tank === false) {
           setIsActive2(true);
         } else {
           setIsActive2(false);
         }
+console.log("Received data:", data);
+        if (data.Horizontal_Conveyor === false) {
+          setIsActive3(true);
+        } else {
+          setIsActive3(false);
+        }
+
+        console.log("Received data:", data);
+        if (data.Mixer_Indicator === false) {
+          setIsActive4(true);
+        } else {
+          setIsActive4(false);
+        }
+
+
+
         console.log("Received data:", data);
         if (data.Weighing_conveyor === false) {
           setWeighing_conveyor(true);
@@ -439,7 +506,7 @@ console.log("Full data received:", data);
                           height="33px"
                           style={{
                             position: "absolute",
-                            top: "1047px",
+                            top: "790px",
                             left: "330px",
                             zIndex: 1000,
                             objectFit: "cover",
@@ -508,6 +575,35 @@ console.log("Full data received:", data);
                         padding: "0px",
                       }}
                     /> */}
+<img
+                      src={imageUrl5}
+                      alt="Dynamic IoT"
+                      style={{
+                        width: "80px",
+                        height: "100px",
+                        display: "block",
+                        position: "absolute",
+                        top: "620px",
+                        left: "25px",
+                        objectFit: "cover",
+                        padding: "0px",
+                      }}
+                    />
+<img
+                      src={imageUrl6}
+                      alt="Dynamic IoT"
+                      style={{
+                        width: "50px",
+                        height: "60px",
+                        display: "block",
+                        position: "absolute",
+                        top: "400px",
+                        left: "200px",
+                        objectFit: "cover",
+                        padding: "0px",
+                      }}
+                    />
+ 
 
                     {showSecondaryImage && (
                       <img
@@ -590,8 +686,8 @@ console.log("Full data received:", data);
                     <div
                       style={{
                         position: "absolute",
-                        top: "510px",
-                        left: "118px",
+                        top: "515px",
+                        left: "85px",
                         fontSize: "30px",
                         //fontWeight: "bold",
                         color: "white",
@@ -620,7 +716,7 @@ console.log("Full data received:", data);
                     <div
                       style={{
                         position: "absolute",
-                        top: "261px",
+                        top: "277px",
                         left: "299px",
                         fontSize: "30px",
                         //fontWeight: "bold",
@@ -636,13 +732,13 @@ console.log("Full data received:", data);
                     <div
                       style={{
                         position: "absolute",
-                        top: "975px",
-                        left: "48px",
+                        top: "290px",
+                        left: "310px",
                         fontSize: "10px",
                         fontWeight: "bold",
                       }}
                     >
-                      {State !== null ? `${State} ` : "SCADA"}
+                      {State !== null ? `${State} ` : "loading"}
 
                     </div>
                     {/* <div
@@ -660,10 +756,10 @@ console.log("Full data received:", data);
 
                       }}
                     /> */}
-                    <Icon
+                    {/* <Icon
                     //mixerindicator
-                      width="18px"
-                      height="18px"
+                      width="10px"
+                      height="10px"
 
                       viewBox={{
                         minX: 0,
@@ -696,10 +792,10 @@ console.log("Full data received:", data);
                       shrink="0"
                       style={{
                         position: "absolute",
-                        top: "428px",
-                        left: "255px",
+                        top: "393px",
+                        left: "307px",
                       }}
-                    />
+                    /> */}
 
 
                     <div
@@ -712,7 +808,7 @@ console.log("Full data received:", data);
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "105px",
+                        top: "98px",
                         left: "90px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
@@ -727,13 +823,43 @@ console.log("Full data received:", data);
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
-                        top: "270px",
-                        left: "98px",
+                        top: "98px",
+                        left: "325px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
                     />
-                    <Icon
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "50%",
+                        backgroundColor: isActive3 ? "#E0230D" : "#85CF23",
+                        display: "inline-block",
+                        //marginTop: "20px",
+                        position: "absolute",
+                        top: "518px",
+                        left: "85px",
+                        border: ".000000001px solid rgba(0,0,0,1)"
+
+                      }}
+                    />
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "50%",
+                        backgroundColor: isActive4 ? "#E0230D" : "#85CF23",
+                        display: "inline-block",
+                        //marginTop: "20px",
+                        position: "absolute",
+                        top: "393px",
+                        left: "307px",
+                        border: ".000000001px solid rgba(0,0,0,1)"
+
+                      }}
+                    />
+                    {/* <Icon
                     //conveyorindicator 
                       width="10px"
                       height="10px"
@@ -769,13 +895,13 @@ console.log("Full data received:", data);
                       shrink="0"
                       style={{
                         position: "absolute",
-                        top: "516px",
-                        left: "145px",
+                        top: "518px",
+                        left: "85px",
                       }}
-                    />
+                    /> */}
 
 
-                    <Icon
+                    {/* <Icon
                       width="10px"
                       height="10px"
 
@@ -813,7 +939,7 @@ console.log("Full data received:", data);
                         top: "390px",
                         left: "338px",
                       }} // for water valve elle gayy 
-                    />
+                    /> */}
                     {/* <div
                       style={{
                         width: "7px",
@@ -829,7 +955,7 @@ console.log("Full data received:", data);
 
                       }}
                     /> */}
-                    <Icon
+                    <Icon //waterrrrvalve
                       width="10px"
                       height="10px"
 

@@ -27,7 +27,7 @@ export default function IPhone13141(props) {
       padding="0px 0px 0px 0px"
        //backgroundImage="linear-gradient( rgb(12, 11, 13), rgb(4, 2, 17), rgb(6, 6, 12))"
 
-      backgroundColor=" rgb(221, 224, 231)"
+      backgroundColor=" #BFCFD9"
       
       {...getOverrideProps(overrides, "IPhone13141")}
       {...rest}
@@ -810,7 +810,7 @@ export default function IPhone13141(props) {
         left="-1px"
         border="1px SOLID rgb(70, 68, 68)"
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(31,31,46,1)"
+        backgroundColor="#2C3B59"
         zIndex="10"
         
         {...getOverrideProps(overrides, "Rectangle 1")}
@@ -944,15 +944,15 @@ export default function IPhone13141(props) {
         ></Image>
       </Flex>
       <Image
-        width="180px"
-        height="124.68px"
+        width="200px"
+        height="170px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="640px"
-        left="110px"
+        top="590px"
+        left="125px"
         padding="0px 0px 0px 0px"
         objectFit="cover"
         src="/Cement_Mixer-removebg-preview.png"
@@ -1822,7 +1822,7 @@ export default function IPhone13141(props) {
               "WhatsApp_Image_2024-08-20_at_1.18.51_AM-removebg-preview 3"
             )}
           ></Image> */}
-          <Icon 
+          {/* <Icon 
           //waterindicator
             width="15px"
             height="15px"
@@ -1847,13 +1847,13 @@ export default function IPhone13141(props) {
             ]}
             style={{
     position: "absolute",
-    top: "-148px",
-    left: "25px",
+    top: "-152px",
+    left: "30px",
     zIndex: 10, // higher than image zIndex: 0
   }}
             {...getOverrideProps(overrides, "power of button151224")}
 
-          ></Icon>
+          ></Icon> */}
           {/* <Image
             width="34px"
             height="18px"
@@ -3121,7 +3121,7 @@ export default function IPhone13141(props) {
           position="relative"
           {...getOverrideProps(overrides, "Vector151230")}
         ></Icon> */}
-        <Icon 
+        {/* <Icon 
         //indicatorbins
           width="15px"
           height="15px"
@@ -3146,8 +3146,8 @@ export default function IPhone13141(props) {
     zIndex: 10, // higher than image zIndex: 0
   }}
           {...getOverrideProps(overrides, "Vector151228")}
-        ></Icon>
-        <Icon
+        ></Icon> */}
+        {/* <Icon
           width="15px"
           height="15px"
           viewBox={{ minX: 0, minY: 0, width: 5, height: 5.000000476837158 }}
@@ -3171,7 +3171,7 @@ export default function IPhone13141(props) {
     zIndex: 10, // higher than image zIndex: 0
   }}
           {...getOverrideProps(overrides, "Vector151226")}
-        ></Icon>
+        ></Icon> */}
       </Flex>
       {/* <Image
         width="61px"
@@ -3443,7 +3443,7 @@ export default function IPhone13141(props) {
     }}
   /> */}
      <img
-    src="/Group 16 (1).png"
+    src="/Group 25.svg" //water
      alt="water"
     style={{
       width: '150px',
@@ -3455,7 +3455,7 @@ export default function IPhone13141(props) {
     }}
   />  
   <img
-    src="/Group 18 (5).png"
+    src="/Group 18.svg" //silo
      alt="silo"
     style={{
       width: '180px',
@@ -3467,19 +3467,19 @@ export default function IPhone13141(props) {
     }}
   />
    <img
-    src="/Group 22.png"
+    src="/Group 22.svg" //mixer
      alt="silo"
     style={{
-      width: '400px',
+      width: '350px',
       height: '500',
       position: 'absolute',
       top: '250px',
-      left: '20px',
+      left: '15px',
        zIndex: 0,
     }}
   />  
   <img
-    src="/Group 23.png"
+    src="/Group 23.svg"
      alt="pipes"
     style={{
       width: '140px',
@@ -3492,17 +3492,18 @@ export default function IPhone13141(props) {
   />  
   
   <img
-    src="/Group 24.png"
+    src="/Group 24.svg"
      alt="pipes"
     style={{
       width: '13px',
-      height: '5.5',
+      height: '50px',
       position: 'absolute',
-      top: '212px',
+      top: '205px',
       left: '310px',
        zIndex: 0,
     }}
   /> 
+ 
 {/* <img
     src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview+(1).png"
      alt="Background image"
