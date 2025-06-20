@@ -5,7 +5,6 @@ import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 import "./Reports.css";
-//import logo from "../../assets/logo.png"; // adjust the path to your logo image (must be imported properly)
 
 const TABLE_NAME = "SmartBatchInventory";
 
@@ -15,9 +14,8 @@ export default function InventoryReport() {
     const [fromDate, setFromDate] = useState("");
     const [toDate, setToDate] = useState("");
     const [sortOrder, setSortOrder] = useState("asc");
-    
 
-      useEffect(() => {
+    useEffect(() => {
         fetchDynamoData(TABLE_NAME).then((data) => {
             const normalized = data.map((item) => ({
                 ...item,
@@ -28,31 +26,37 @@ export default function InventoryReport() {
         });
     }, []);
 
-
-
     const applyFilter = () => {
         const from = new Date(fromDate);
         const to = new Date(toDate);
         const result = rows.filter((row) => {
-            const date = new Date(row.date || row["Time Stamp"]); // adjust as per your data key
+            const date = new Date(row.timestamp);
             return (!fromDate || date >= from) && (!toDate || date <= to);
         });
         setFiltered(result);
     };
 
     const sortBytimestamp = () => {
-    const sortedData = [...filtered].sort((a, b) => {
-        const dateA = new Date(a.timestamp);
-        const dateB = new Date(b.timestamp);
-        return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
-    });
+        const sortedData = [...filtered].sort((a, b) => {
+            const dateA = new Date(a.timestamp);
+            const dateB = new Date(b.timestamp);
+            return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+        });
 
-    setFiltered(sortedData);
-    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
-};
+        setFiltered(sortedData);
+        setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
+    };
 
     const exportExcel = () => {
-        const worksheet = XLSX.utils.json_to_sheet(filtered);
+        // Only these 4 fields exported
+        const exportData = filtered.map(item => ({
+            "Time Stamp": item.timestamp,
+            "Material Name": item.materialName,
+            "Status": item.status,
+            "Supplier": item.supplier
+        }));
+
+        const worksheet = XLSX.utils.json_to_sheet(exportData);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Inventory Report");
         const buffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
@@ -61,44 +65,28 @@ export default function InventoryReport() {
 
     const exportPDF = () => {
         const doc = new jsPDF();
-
-        // Title
         doc.setFontSize(16);
         doc.text("Smart Batch Concrete Batching Plant - Inventory Report", 105, 15, null, null, 'center');
 
-        // Logo (top-right)
-        //doc.addImage(logo, "PNG", 160, 5, 30, 30); // Adjust position/size if needed
+        const headers = [["Time Stamp", "Material Name", "Status", "Supplier"]];
 
-        // Table Headers
-        const headers = [
-            ["Time Stamp", "Material Name", "Material Type", "Quantity", "status", "source", "supplier", "Current Stock Quantity"],
-        ];
-
-        // Table Data
         const data = filtered.map(item => [
-            item.timestamp || item["Time Stamp"] || "",
-            item.materialName || item["Material Name"] || "",
-            item.materialType || item["Material Type"] || "",
-            //item.quantity || item["Quantity"] || "",
-            item.quantity || item["Quantity"] || "N/A" ,
-
-            item.status || item["status"] || "",
-            item.source || item["source"] || "",
-            item.supplier || item["supplier"] || "",
-            item.currentStockQuantity || item["Current Stock Quantity"] || "",
+            item.timestamp || "",
+            item.materialName || "",
+            item.status || "",
+            item.supplier || ""
         ]);
 
-        // AutoTable
-       autoTable(doc, {
-        startY: 40,
-        head: headers,
-        body: data,
-        theme: 'grid',
-        headStyles: { fillColor: [22, 160, 133] },
-        styles: { fontSize: 8, cellPadding: 3 },
-        margin: { top: 40 },
-    });
-        // Footer with Generation Date & Time
+        autoTable(doc, {
+            startY: 40,
+            head: headers,
+            body: data,
+            theme: 'grid',
+            headStyles: { fillColor: [22, 160, 133] },
+            styles: { fontSize: 8, cellPadding: 3 },
+            margin: { top: 40 },
+        });
+
         const currentDate = new Date();
         const pageHeight = doc.internal.pageSize.height;
 
@@ -111,6 +99,13 @@ export default function InventoryReport() {
 
     return (
         <div className="reports-container">
+            <div className="header-image">
+                <img 
+                    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot+2025-06-14+033134.png" 
+                    alt="Batching Report Header"
+                    style={{ width: '100%', maxHeight: '300px', objectFit: 'contain' }}
+                />
+                 </div>
             <div className="filter-export-section">
                 <div className="filter-row">
                     <div className="filter-group">
@@ -129,35 +124,23 @@ export default function InventoryReport() {
 
             <div className="report-table-wrapper">
                 <table className="report-table">
-                   <thead>
-  <tr>
-    {filtered.length > 0 &&
-      Object.keys(filtered[0]).map((key, i) => {
-        // Normalize key for consistent comparison
-        const isTimestamp =
-          key.toLowerCase().replace(/\s/g, "") === "timestamp";
-
-        return (
-          <th
-            key={i}
-            onClick={isTimestamp ? sortBytimestamp : undefined}
-            style={isTimestamp ? { cursor: "pointer", userSelect: "none" } : {}}
-          >
-            {key}{" "}
-            {isTimestamp && (
-              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
-            )}
-          </th>
-        );
-      })}
-  </tr>
-</thead>
+                    <thead>
+                        <tr>
+                            <th onClick={sortBytimestamp} style={{ cursor: "pointer" }}>
+                                Time Stamp {sortOrder === "asc" ? "▲" : "▼"}
+                            </th>
+                            <th>Material Name</th>
+                            <th>Status</th>
+                            <th>Supplier</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         {filtered.map((row, i) => (
                             <tr key={i}>
-                                {Object.values(row).map((val, j) => (
-                                    <td key={j}>{val}</td>
-                                ))}
+                                <td>{row.timestamp}</td>
+                                <td>{row.materialName}</td>
+                                <td>{row.status}</td>
+                                <td>{row.supplier}</td>
                             </tr>
                         ))}
                     </tbody>

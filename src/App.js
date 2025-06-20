@@ -47,6 +47,10 @@ function App() {
   const [isActive2, setIsActive2] = useState(false); //indicator of water tank
     const [isActive3, setIsActive3] = useState(false); //indicator of convyor tank
     const [isActive4, setIsActive4] = useState(false); //indicator of mixer 
+        const [isActive5, setIsActive5] = useState(false); //indicator of mixer 
+                const [isActive6, setIsActive6] = useState(false); //indicator of mixer 
+
+
 
   const [Weighing_conveyor, setWeighing_conveyor] = useState(false);
   const [Inclined_conveyor, setInclined_conveyor] = useState(false);
@@ -69,7 +73,7 @@ const [imageUrl5, setImageUrl5] = useState(
     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Manual.svg"
   );
 const [imageUrl6, setImageUrl6] = useState(
-    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot_2025-06-13_171648-removebg-preview__1_-removebg-preview.png"
+    "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-10-10_at_1.20.02_AM-removebg-preview+1.svg"
   );
 
 
@@ -119,7 +123,27 @@ const [imageUrl6, setImageUrl6] = useState(
     // Create Subscriber
     pubsub.subscribe({ topics: "esp32/pub" }).subscribe({
       next: (data) => {
-        console.log("Full data received:", data);
+        // console.log("Full data received:", data);
+        // console.log("Message details:", data.Aggregate_1_bin_gate);
+        // // Add additional logging if needed
+        // if (data.Aggregate_1_bin_gate === true) {
+        //   setImageUrl(
+        //     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM__1_-removebg-preview.png"
+        //   );
+        //   // Show the secondary image with animation
+        //   setShowSecondaryImage1(true);
+
+        //   // Hide the image after the animation
+        //   setTimeout(() => setShowSecondaryImage1(false), 13000);
+        // }
+        // else {
+
+        //   setImageUrl(
+        //     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
+        //   );
+        // }
+
+         console.log("Full data received:", data);
         console.log("Message details:", data.Aggregate_1_bin_gate);
         // Add additional logging if needed
         if (data.Aggregate_1_bin_gate === true) {
@@ -130,14 +154,20 @@ const [imageUrl6, setImageUrl6] = useState(
           setShowSecondaryImage1(true);
 
           // Hide the image after the animation
-          setTimeout(() => setShowSecondaryImage1(false), 13000);
+          //setTimeout(() => setShowSecondaryImage1(false), 13000);
         }
         else {
 
           setImageUrl(
             "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
           );
+
+          setShowSecondaryImage1(false);
         }
+
+
+
+        
 
 
 console.log("Full data received:", data);
@@ -170,12 +200,13 @@ console.log("Full data received:", data);
           setShowSecondaryImage(true);
 
           // Hide the image after the animation
-          setTimeout(() => setShowSecondaryImage(false), 13000);
+          //setTimeout(() => setShowSecondaryImage(false), 13000);
 
         } else {
           setImageUrl1(
             "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.11.51_AM-removebg-preview.png"
           );
+           setShowSecondaryImage(false);
         }
 
 console.log("Full data received:", data);
@@ -214,8 +245,8 @@ console.log("Full data received:", data);
         }
 
 console.log("Full data received:", data);
-        console.log("Message details:", data.Inclined_Conveyor_off);
-        if (data.Inclined_Conveyor === true) {
+        console.log("Message details:", data.Inclined_Conveyor_Sand);
+        if (data.Inclined_Conveyor_Sand === true) {
           setImageUrl6(
                                     "https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-10-10_at_1.20.02_AM-removebg-preview+1.svg"
 
@@ -294,7 +325,18 @@ console.log("Received data:", data);
         } else {
           setIsActive4(false);
         }
-
+        console.log("Received data:", data);
+        if (data.Hopper_Indicator === false) {
+          setIsActive5(true);
+        } else {
+          setIsActive5(false);
+        }
+console.log("Received data:", data);
+        if (data.water_valve_Indicator === false) {
+          setIsActive6(true);
+        } else {
+          setIsActive6(false);
+        }
 
 
         console.log("Received data:", data);
@@ -385,55 +427,55 @@ console.log("Received data:", data);
     connectToIoT();
   }, []);
 
-  const publishButton = async () => {
-    try {
-      const session = await fetchAuthSession({ forceRefresh: false });
-      const id = session.identityId;
-      const idToken = session.tokens.idToken.toString();
+  // const publishButton = async () => {
+  //   try {
+  //     const session = await fetchAuthSession({ forceRefresh: false });
+  //     const id = session.identityId;
+  //     const idToken = session.tokens.idToken.toString();
 
-      const cognitoClient = new CognitoIdentityClient({
-        region: "eu-north-1",
-      });
-      const cognitoRequest = {
-        IdentityId: id,
-        Logins: {
-          "cognito-idp.eu-north-1.amazonaws.com/eu-north-1_fbBYQUTeP": idToken,
-        },
-      };
+  //     const cognitoClient = new CognitoIdentityClient({
+  //       region: "eu-north-1",
+  //     });
+  //     const cognitoRequest = {
+  //       IdentityId: id,
+  //       Logins: {
+  //         "cognito-idp.eu-north-1.amazonaws.com/eu-north-1_fbBYQUTeP": idToken,
+  //       },
+  //     };
 
-      const cognitoCommand = new GetCredentialsForIdentityCommand(cognitoRequest);
-      const cognitoCreds = await cognitoClient.send(cognitoCommand);
+  //     const cognitoCommand = new GetCredentialsForIdentityCommand(cognitoRequest);
+  //     const cognitoCreds = await cognitoClient.send(cognitoCommand);
 
-      const iotClient = new IoTDataPlaneClient({
-        region: "eu-north-1",
-        credentials: {
-          accessKeyId: cognitoCreds.Credentials.AccessKeyId,
-          secretAccessKey: cognitoCreds.Credentials.SecretKey,
-          sessionToken: cognitoCreds.Credentials.SessionToken,
-          expiration: cognitoCreds.Credentials.Expiration,
-        },
-      });
+  //     const iotClient = new IoTDataPlaneClient({
+  //       region: "eu-north-1",
+  //       credentials: {
+  //         accessKeyId: cognitoCreds.Credentials.AccessKeyId,
+  //         secretAccessKey: cognitoCreds.Credentials.SecretKey,
+  //         sessionToken: cognitoCreds.Credentials.SessionToken,
+  //         expiration: cognitoCreds.Credentials.Expiration,
+  //       },
+  //     });
 
-      const pubTopicName = "esp32/sub";
-      const payload = {
-        message: "Hello from AWS SDK!",
-      };
-      const encodedPayload = Buffer.from(JSON.stringify(payload));
+  //     const pubTopicName = "esp32/sub";
+  //     const payload = {
+  //       message: "Hello from AWS SDK!",
+  //     };
+  //     const encodedPayload = Buffer.from(JSON.stringify(payload));
 
-      const publishParams = {
-        topic: pubTopicName,
-        qos: 0,
-        payload: encodedPayload,
-        retain: false,
-      };
+  //     const publishParams = {
+  //       topic: pubTopicName,
+  //       qos: 0,
+  //       payload: encodedPayload,
+  //       retain: false,
+  //     };
 
-      const publishCommand = new PublishCommand(publishParams);
-      const data = await iotClient.send(publishCommand);
-      console.log("Publish to IoT success:", data);
-    } catch (err) {
-      console.error("Publish to IoT failed:", err);
-    }
-  };
+  //     const publishCommand = new PublishCommand(publishParams);
+  //     const data = await iotClient.send(publishCommand);
+  //     console.log("Publish to IoT success:", data);
+  //   } catch (err) {
+  //     console.error("Publish to IoT failed:", err);
+  //   }
+  // };
 
   return (
     <Router>
@@ -478,14 +520,14 @@ console.log("Received data:", data);
 
                       <Link to="/concrete-mix">
                         <Image
-                          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-20_at_1.12.34_AM-removebg-preview.png"
+                          src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/ChatGPT_Image_Jun_19__2025__11_43_59_PM-removebg-preview.png"
                           alt="Merna Icon"
-                          width="32px"
-                          height="32px"
+                          width="50px"
+                          height="50px"
                           style={{
                             position: "absolute",
-                            top: "790px",
-                            left: "330px",
+                            top: "780px",
+                            left: "310px",
                             zIndex: 999,
                             objectFit: "cover",
                             cursor: "pointer" // Add this for better UX
@@ -615,7 +657,7 @@ console.log("Received data:", data);
                           height: "20px",
                           position: "absolute",
                           top: "440px",
-                          left: "100px",
+                          left: "70px",
                           objectFit: "cover",
                           animation: "moveDown 13s ease-in-out forwards",
                         }}
@@ -656,11 +698,11 @@ console.log("Received data:", data);
                         src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
                         alt="Secondary Dynamic IoT"
                         style={{
-                          width: "20px",
-                          height: "50px",
+                          width: "30px",
+                          height: "40px",
                           position: "absolute",
                           top: "559px",
-                          left: "288px",
+                          left: "285px",
                           objectFit: "cover",
                           animation: "moveDown 13s ease-in-out forwards",
                         }}
@@ -670,7 +712,7 @@ console.log("Received data:", data);
 
 
 
-                    <button
+                    {/* <button
                       onClick={publishButton}
                       style={{
                         marginTop: "20px",
@@ -683,7 +725,7 @@ console.log("Received data:", data);
                       }}
                     >
                       Publish to IoT
-                    </button>
+                    </button> */}
                     <div
                       style={{
                         position: "absolute",
@@ -694,9 +736,11 @@ console.log("Received data:", data);
                         color: "white",
                       }}
                     >
-                      { weight!== null
+                      
+                      { weight!== null 
+                      //...
                         ? `${Number(weight).toFixed(2)} kg`
-                        : "..."}
+                        : ""} 
                     </div>
                     <div
                       style={{
@@ -711,10 +755,10 @@ console.log("Received data:", data);
                     >
                       {Weight_cement !== null
                         ? `${Number(Weight_cement).toFixed(2)} kg`
-                        : "..."}
+                        : ""}
                     </div>
 
-                    <div
+                    {/* <div
                       style={{
                         position: "absolute",
                         top: "266px",
@@ -725,10 +769,11 @@ console.log("Received data:", data);
 
                       }}
                     >
-                      {Weight_water !== null
+                      {Weight_water !== null 
+                      //...
                         ? `${Number(Weight_water).toFixed(2)} kg`
-                        : "..."}
-                    </div>
+                        : ""}
+                    </div> */}
 
                     {/* <div
                       style={{
@@ -805,7 +850,7 @@ console.log("Received data:", data);
                         width: "10px",
                         height: "10px",
                         borderRadius: "50%",
-                        backgroundColor: isActive1 ? "#E0230D" : "#85CF23",
+                        backgroundColor: isActive1 ? "#6c757d" : "#00bcd4",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
@@ -820,7 +865,7 @@ console.log("Received data:", data);
                         width: "10px",
                         height: "10px",
                         borderRadius: "50%",
-                        backgroundColor: isActive2 ? "#E0230D" : "#85CF23",
+                        backgroundColor: isActive2 ? "#6c757d" : "#00bcd4",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
@@ -835,7 +880,7 @@ console.log("Received data:", data);
                         width: "10px",
                         height: "10px",
                         borderRadius: "50%",
-                        backgroundColor: isActive3 ? "#E0230D" : "#85CF23",
+                        backgroundColor: isActive3 ? "#6c757d" : "#00bcd4",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
@@ -850,12 +895,42 @@ console.log("Received data:", data);
                         width: "10px",
                         height: "10px",
                         borderRadius: "50%",
-                        backgroundColor: isActive4 ? "#E0230D" : "#85CF23",
+                        backgroundColor: isActive4 ? "#6c757d" : "#00bcd4",
                         display: "inline-block",
                         //marginTop: "20px",
                         position: "absolute",
                         top: "393px",
                         left: "307px",
+                        border: ".000000001px solid rgba(0,0,0,1)"
+
+                      }}
+                    />
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "50%",
+                        backgroundColor: isActive5 ? "#6c757d" : "#00bcd4",
+                        display: "inline-block",
+                        //marginTop: "20px",
+                        position: "absolute",
+                        top: "270px",
+                        left: "105px",
+                        border: ".000000001px solid rgba(0,0,0,1)"
+
+                      }}
+                    />
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "50%",
+                        backgroundColor: isActive6 ? "#6c757d" : "#00bcd4",
+                        display: "inline-block",
+                        //marginTop: "20px",
+                        position: "absolute",
+                        top: "283px",
+                        left: "333px",
                         border: ".000000001px solid rgba(0,0,0,1)"
 
                       }}
@@ -956,7 +1031,7 @@ console.log("Received data:", data);
 
                       }}
                     /> */}
-                    <Icon //waterrrrvalve
+                    {/* <Icon //waterrrrvalve
                       width="10px"
                       height="10px"
 
@@ -995,7 +1070,7 @@ console.log("Received data:", data);
                         left: "317px",
                       }}
 
-                    />
+                    /> */}
                   </div>
 
                 )}
@@ -1006,7 +1081,7 @@ console.log("Received data:", data);
         <Route path="/concrete-mix" element={<ConcreteMixForm />} />
         <Route path="/reports" element={<ReportsPage />} />
       </Routes>
-      {showSecondaryImage && (
+      {/* {showSecondaryImage && (
         <img
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"
           alt="Secondary Dynamic IoT"
@@ -1020,7 +1095,7 @@ console.log("Received data:", data);
             animation: "moveDown 13s ease-in-out forwards",
           }}
         />
-      )}
+      )} */}
       {showSecondaryImage1 && (
         <img
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/WhatsApp_Image_2024-08-22_at_9.25.21_PM-removebg-preview.png"

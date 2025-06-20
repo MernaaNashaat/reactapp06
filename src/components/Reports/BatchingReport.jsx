@@ -355,9 +355,9 @@ const exportPDF = () => {
                             <th>Batch ID</th>
                             <th>Client</th>
                             <th>Start Date</th>
-                            <th>End Time</th>
-                            <th>Mix ID</th>
-                            <th>Batches</th>
+                            {/* <th>End Time</th> */}
+                            {/* <th>Mix ID</th>
+                            <th>Batches</th> */}
                             <th>Qty (m³)</th>
                         </tr>
                     </thead>
@@ -371,9 +371,9 @@ const exportPDF = () => {
                                 <td>{row.batch_id}</td>
                                 <td>{row.ClientID}</td>
                                 <td>{row.BatchStartDate}</td>
-                                <td>{row.BatchEndTime}</td>
-                                <td>{row.MixID}</td>
-                                <td>{row.NumberOfBatches}</td>
+                                {/* <td>{row.BatchEndTime}</td> */}
+                                {/* <td>{row.MixID}</td>
+                                <td>{row.NumberOfBatches}</td> */}
                                 <td>{row.Quantity}</td>
                             </tr>
                         ))}

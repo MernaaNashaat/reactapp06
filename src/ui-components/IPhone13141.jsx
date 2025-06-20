@@ -917,7 +917,7 @@ export default function IPhone13141(props) {
           shrink="0"
           position="absolute"
           top ="-5px"
-          left="198px"
+          left="200px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/truck-removebg-preview.png"
@@ -1915,19 +1915,21 @@ export default function IPhone13141(props) {
         position="absolute"
         top="113px"
         left="217px"
+
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Chemicals")}
       >
         <Flex
           padding="0px 0px 0px 0px"
           width="44.53px"
-          height="77px"
-          display="block"
+          height="77px"          
+          display="Hide"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           shrink="0"
           position="relative"
+          zIndex ="-10"
           {...getOverrideProps(overrides, "Chemical 1")}
         >
           {/* <Image

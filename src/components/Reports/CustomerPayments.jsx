@@ -15,59 +15,50 @@ export default function CustomerPayments() {
     const [toDate, setToDate] = useState("");
     const [sortOrder, setSortOrder] = useState("asc");
 
-
     useEffect(() => {
-    fetchDynamoData(TABLE_NAME).then((data) => {
-        const normalized = data.map((item) => ({
-            ...item,
-            timestamp: item.timestamp || item["Time Stamp"],
-        }));
-        setRows(normalized);
-        setFiltered(normalized);
-    });
-}, []);
-
+        fetchDynamoData(TABLE_NAME).then((data) => {
+            const normalized = data.map((item) => ({
+                ...item,
+                timestamp: item.timestamp || item["Time Stamp"],
+            }));
+            setRows(normalized);
+            setFiltered(normalized);
+        });
+    }, []);
 
     const applyFilter = () => {
         const from = new Date(fromDate);
         const to = new Date(toDate);
         const result = rows.filter((row) => {
-            const date = new Date(row.date); // Adjust if your date field is different
+            const date = new Date(row.timestamp);
             return (!fromDate || date >= from) && (!toDate || date <= to);
         });
         setFiltered(result);
     };
 
+    const sortByTimestamp = () => {
+        const sortedData = [...filtered].sort((a, b) => {
+            const dateA = new Date(a.timestamp);
+            const dateB = new Date(b.timestamp);
+            return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+        });
 
-   const sortBytimestamp = () => {
-    const sortedData = [...filtered].sort((a, b) => {
-        const dateA = new Date(a.timestamp);
-        const dateB = new Date(b.timestamp);
-        return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
-    });
-
-    setFiltered(sortedData);
-    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
-};
-
-   
-
+        setFiltered(sortedData);
+        setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
+    };
 
     const exportPDF = () => {
         const doc = new jsPDF();
         doc.setFontSize(14);
         doc.text("Smart Batch Concrete Batching Plant - Customer Payments", 105, 15, null, null, 'center');
 
-        const headers = [["Time Stamp", "customerName", "Address", "Mobile", "Account Number", "Paid Amount", "status", "Current Balance"]];
+        const headers = [["Timestamp", "Customer Name", "Current Balance", "Paid Amount"]];
+
         const data = filtered.map(item => [
-            item.timestamp || item["Time Stamp"] || "",
-            item.customerName || item["customerName"] || "N/A",
-            item.address || item["Address"] || "",
-            item.mobile || item["Mobile"] || "",
-            item.accountNumber || item["Account Number"] || "",
-            item.paidAmount || item["Paid Amount"] || "",
-            item.status || item["status"] || "",
-            item.currentBalance || item["Current Balance"] || "",
+            item.timestamp || "N/A",
+            item.customerName || "N/A",
+            item.currentBalance || "N/A",
+            item.paidAmount || "N/A",
         ]);
 
         autoTable(doc, {
@@ -90,7 +81,14 @@ export default function CustomerPayments() {
     };
 
     const exportExcel = () => {
-        const worksheet = XLSX.utils.json_to_sheet(filtered);
+        const exportData = filtered.map(item => ({
+            "Timestamp": item.timestamp,
+            "Customer Name": item.customerName,
+            "Current Balance": item.currentBalance,
+            "Paid Amount": item.paidAmount
+        }));
+
+        const worksheet = XLSX.utils.json_to_sheet(exportData);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Customer Payments");
         const buffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
@@ -99,6 +97,13 @@ export default function CustomerPayments() {
 
     return (
         <div className="reports-container">
+            <div className="header-image">
+                <img 
+                    src="https://bucketgp.s3.eu-north-1.amazonaws.com/pics_for_GP/Screenshot+2025-06-14+033134.png" 
+                    alt="Batching Report Header"
+                    style={{ width: '100%', maxHeight: '300px', objectFit: 'contain' }}
+                />
+                 </div>
             <div className="filter-export-section">
                 <div className="filter-row">
                     <div className="filter-group">
@@ -117,43 +122,24 @@ export default function CustomerPayments() {
 
             <div className="report-table-wrapper">
                 <table className="report-table">
-                   <thead>
-  <tr>
-    {filtered.length > 0 &&
-      Object.keys(filtered[0]).map((key, i) => {
-        // Normalize key for consistent comparison
-        const isTimestamp =
-          key.toLowerCase().replace(/\s/g, "") === "timestamp";
-
-        return (
-          <th
-            key={i}
-            onClick={isTimestamp ? sortBytimestamp : undefined}
-            style={isTimestamp ? { cursor: "pointer", userSelect: "none" } : {}}
-          >
-            {key}{" "}
-            {isTimestamp && (
-              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
-            )}
-          </th>
-        );
-      })}
-  </tr>
-</thead>
-
-
-
+                    <thead>
+                        <tr>
+                            <th onClick={sortByTimestamp} style={{ cursor: "pointer" }}>Timestamp {sortOrder === "asc" ? "▲" : "▼"}</th>
+                            <th>Customer Name</th>
+                            <th>Current Balance</th>
+                            <th>Paid Amount</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         {filtered.map((row, i) => (
                             <tr key={i}>
-                                {Object.values(row).map((val, j) => (
-                                    <td key={j}>{val}</td>
-                                ))}
+                                <td>{row.timestamp}</td>
+                                <td>{row.customerName}</td>
+                                <td>{row.currentBalance}</td>
+                                <td>{row.paidAmount}</td>
                             </tr>
                         ))}
                     </tbody>
-                   
-
                 </table>
             </div>
         </div>
